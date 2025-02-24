@@ -24,7 +24,7 @@ namespace BlockchainTest.Controllers
         {
             if (ModelState.IsValid)
             {
-                _blockchainService.Blockchain.AddBlock(new List<ITransaction>() { model });
+                _blockchainService.AddBlock(new List<ITransaction> { model });
                 return RedirectToAction("Index");
             }
             return View("Index", _blockchainService.Blockchain);
