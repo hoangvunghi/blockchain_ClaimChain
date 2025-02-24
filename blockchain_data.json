@@ -1,0 +1,232 @@
+{
+  "CurrentBlock": {
+    "Transactions": [
+      {
+        "ClaimNumber": "1000000",
+        "SettlementAmount": 100.0,
+        "SettlementDate": "2025-02-28T15:24:00",
+        "CarRegistration": "hehe",
+        "Mileage": -2,
+        "ClaimType": 1
+      }
+    ],
+    "BlockNumber": 4,
+    "CreatedDate": "2025-02-24T08:24:10.9165606Z",
+    "BlockHash": "KBS1b5sjj23jp6Osyo+5eiVn4KVHeVHftWd7+xhzIsQ=",
+    "PreviousBlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+    "NextBlock": null
+  },
+  "HeadBlock": {
+    "Transactions": [],
+    "BlockNumber": 1,
+    "CreatedDate": "2025-02-24T08:23:20.6153592Z",
+    "BlockHash": "QTM6F7Z2nTBoWwlhpp/Fi19h+HWUurdhigXQajuUi44=",
+    "PreviousBlockHash": null,
+    "NextBlock": {
+      "Transactions": [
+        {
+          "ClaimNumber": "Claim001",
+          "SettlementAmount": 1500.00,
+          "SettlementDate": "2025-02-24T08:23:20.6349214Z",
+          "CarRegistration": "CAR-123",
+          "Mileage": 5000,
+          "ClaimType": 0
+        }
+      ],
+      "BlockNumber": 2,
+      "CreatedDate": "2025-02-24T08:23:20.6349768Z",
+      "BlockHash": "U8dovMfGhwG7D40p04ldb8T2vYQB94VyaEEbAgUWhaU=",
+      "PreviousBlockHash": "QTM6F7Z2nTBoWwlhpp/Fi19h+HWUurdhigXQajuUi44=",
+      "NextBlock": {
+        "Transactions": [
+          {
+            "ClaimNumber": "Claim002",
+            "SettlementAmount": 2500.00,
+            "SettlementDate": "2025-02-24T08:23:20.6451245Z",
+            "CarRegistration": "CAR-456",
+            "Mileage": 12000,
+            "ClaimType": 1
+          }
+        ],
+        "BlockNumber": 3,
+        "CreatedDate": "2025-02-24T08:23:20.6451266Z",
+        "BlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+        "PreviousBlockHash": "U8dovMfGhwG7D40p04ldb8T2vYQB94VyaEEbAgUWhaU=",
+        "NextBlock": {
+          "Transactions": [
+            {
+              "ClaimNumber": "1000000",
+              "SettlementAmount": 100.0,
+              "SettlementDate": "2025-02-28T15:24:00",
+              "CarRegistration": "hehe",
+              "Mileage": -2,
+              "ClaimType": 1
+            }
+          ],
+          "BlockNumber": 4,
+          "CreatedDate": "2025-02-24T08:24:10.9165606Z",
+          "BlockHash": "KBS1b5sjj23jp6Osyo+5eiVn4KVHeVHftWd7+xhzIsQ=",
+          "PreviousBlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+          "NextBlock": null
+        }
+      }
+    }
+  },
+  "Blocks": [
+    {
+      "Transactions": [],
+      "BlockNumber": 1,
+      "CreatedDate": "2025-02-24T08:23:20.6153592Z",
+      "BlockHash": "QTM6F7Z2nTBoWwlhpp/Fi19h+HWUurdhigXQajuUi44=",
+      "PreviousBlockHash": null,
+      "NextBlock": {
+        "Transactions": [
+          {
+            "ClaimNumber": "Claim001",
+            "SettlementAmount": 1500.00,
+            "SettlementDate": "2025-02-24T08:23:20.6349214Z",
+            "CarRegistration": "CAR-123",
+            "Mileage": 5000,
+            "ClaimType": 0
+          }
+        ],
+        "BlockNumber": 2,
+        "CreatedDate": "2025-02-24T08:23:20.6349768Z",
+        "BlockHash": "U8dovMfGhwG7D40p04ldb8T2vYQB94VyaEEbAgUWhaU=",
+        "PreviousBlockHash": "QTM6F7Z2nTBoWwlhpp/Fi19h+HWUurdhigXQajuUi44=",
+        "NextBlock": {
+          "Transactions": [
+            {
+              "ClaimNumber": "Claim002",
+              "SettlementAmount": 2500.00,
+              "SettlementDate": "2025-02-24T08:23:20.6451245Z",
+              "CarRegistration": "CAR-456",
+              "Mileage": 12000,
+              "ClaimType": 1
+            }
+          ],
+          "BlockNumber": 3,
+          "CreatedDate": "2025-02-24T08:23:20.6451266Z",
+          "BlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+          "PreviousBlockHash": "U8dovMfGhwG7D40p04ldb8T2vYQB94VyaEEbAgUWhaU=",
+          "NextBlock": {
+            "Transactions": [
+              {
+                "ClaimNumber": "1000000",
+                "SettlementAmount": 100.0,
+                "SettlementDate": "2025-02-28T15:24:00",
+                "CarRegistration": "hehe",
+                "Mileage": -2,
+                "ClaimType": 1
+              }
+            ],
+            "BlockNumber": 4,
+            "CreatedDate": "2025-02-24T08:24:10.9165606Z",
+            "BlockHash": "KBS1b5sjj23jp6Osyo+5eiVn4KVHeVHftWd7+xhzIsQ=",
+            "PreviousBlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+            "NextBlock": null
+          }
+        }
+      }
+    },
+    {
+      "Transactions": [
+        {
+          "ClaimNumber": "Claim001",
+          "SettlementAmount": 1500.00,
+          "SettlementDate": "2025-02-24T08:23:20.6349214Z",
+          "CarRegistration": "CAR-123",
+          "Mileage": 5000,
+          "ClaimType": 0
+        }
+      ],
+      "BlockNumber": 2,
+      "CreatedDate": "2025-02-24T08:23:20.6349768Z",
+      "BlockHash": "U8dovMfGhwG7D40p04ldb8T2vYQB94VyaEEbAgUWhaU=",
+      "PreviousBlockHash": "QTM6F7Z2nTBoWwlhpp/Fi19h+HWUurdhigXQajuUi44=",
+      "NextBlock": {
+        "Transactions": [
+          {
+            "ClaimNumber": "Claim002",
+            "SettlementAmount": 2500.00,
+            "SettlementDate": "2025-02-24T08:23:20.6451245Z",
+            "CarRegistration": "CAR-456",
+            "Mileage": 12000,
+            "ClaimType": 1
+          }
+        ],
+        "BlockNumber": 3,
+        "CreatedDate": "2025-02-24T08:23:20.6451266Z",
+        "BlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+        "PreviousBlockHash": "U8dovMfGhwG7D40p04ldb8T2vYQB94VyaEEbAgUWhaU=",
+        "NextBlock": {
+          "Transactions": [
+            {
+              "ClaimNumber": "1000000",
+              "SettlementAmount": 100.0,
+              "SettlementDate": "2025-02-28T15:24:00",
+              "CarRegistration": "hehe",
+              "Mileage": -2,
+              "ClaimType": 1
+            }
+          ],
+          "BlockNumber": 4,
+          "CreatedDate": "2025-02-24T08:24:10.9165606Z",
+          "BlockHash": "KBS1b5sjj23jp6Osyo+5eiVn4KVHeVHftWd7+xhzIsQ=",
+          "PreviousBlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+          "NextBlock": null
+        }
+      }
+    },
+    {
+      "Transactions": [
+        {
+          "ClaimNumber": "Claim002",
+          "SettlementAmount": 2500.00,
+          "SettlementDate": "2025-02-24T08:23:20.6451245Z",
+          "CarRegistration": "CAR-456",
+          "Mileage": 12000,
+          "ClaimType": 1
+        }
+      ],
+      "BlockNumber": 3,
+      "CreatedDate": "2025-02-24T08:23:20.6451266Z",
+      "BlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+      "PreviousBlockHash": "U8dovMfGhwG7D40p04ldb8T2vYQB94VyaEEbAgUWhaU=",
+      "NextBlock": {
+        "Transactions": [
+          {
+            "ClaimNumber": "1000000",
+            "SettlementAmount": 100.0,
+            "SettlementDate": "2025-02-28T15:24:00",
+            "CarRegistration": "hehe",
+            "Mileage": -2,
+            "ClaimType": 1
+          }
+        ],
+        "BlockNumber": 4,
+        "CreatedDate": "2025-02-24T08:24:10.9165606Z",
+        "BlockHash": "KBS1b5sjj23jp6Osyo+5eiVn4KVHeVHftWd7+xhzIsQ=",
+        "PreviousBlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+        "NextBlock": null
+      }
+    },
+    {
+      "Transactions": [
+        {
+          "ClaimNumber": "1000000",
+          "SettlementAmount": 100.0,
+          "SettlementDate": "2025-02-28T15:24:00",
+          "CarRegistration": "hehe",
+          "Mileage": -2,
+          "ClaimType": 1
+        }
+      ],
+      "BlockNumber": 4,
+      "CreatedDate": "2025-02-24T08:24:10.9165606Z",
+      "BlockHash": "KBS1b5sjj23jp6Osyo+5eiVn4KVHeVHftWd7+xhzIsQ=",
+      "PreviousBlockHash": "JVUGybMvXi4veB9I2h/roX+hhoZT9uESmcYUWQ3v+k4=",
+      "NextBlock": null
+    }
+  ]
+}

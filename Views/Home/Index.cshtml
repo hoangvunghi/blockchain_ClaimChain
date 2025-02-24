@@ -1,0 +1,94 @@
+@model BlockchainTest.Models.BlockChain
+
+<div class="container mt-5">
+    <!-- Tiêu đề -->
+    <h2 class="text-center mb-5 fw-bold text-uppercase" style="color: #2c3e50;">Blockchain Ledger</h2>
+
+    <!-- Bảng dữ liệu -->
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-hover table-striped align-middle">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th scope="col">Block #</th>
+                    <th scope="col">Hash</th>
+                    <th scope="col">Previous Hash</th>
+                    <th scope="col">Transactions</th>
+                    <th scope="col">Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var block in Model.Blocks)
+                {
+                    <tr>
+                        <td class="fw-bold text-primary">@block.BlockNumber</td>
+                        <td class="text-monospace text-truncate" style="max-width: 200px;" title="@block.BlockHash">@block.BlockHash</td>
+                        <td class="text-monospace text-truncate" style="max-width: 200px;" title="@block.PreviousBlockHash">@block.PreviousBlockHash</td>
+                        <td>
+                            @if (block.Transactions.Any())
+                            {
+                                <ul class="list-unstyled m-0">
+                                    @foreach (var transaction in block.Transactions)
+                                    {
+                                        <li class="py-2 border-bottom">
+                                            <div><strong>Claim:</strong> @transaction.ClaimNumber</div>
+                                            <div><strong>Amount:</strong> @transaction.SettlementAmount.ToString("C")</div>
+                                            <div class="text-muted small"><strong>Hash:</strong> @transaction.CalculateTransactionHash()</div>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <span class="text-muted fst-italic">No Transactions</span>
+                            }
+                        </td>
+                        <td>@block.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card shadow-lg mt-5 border-0">
+        <div class="card-header bg-gradient bg-primary text-white py-3">
+            <h4 class="mb-0 fw-semibold">Add New Transaction</h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="AddTransaction" method="post">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="ClaimNumber" class="form-label fw-medium">Claim Number</label>
+                        <input type="text" id="ClaimNumber" name="ClaimNumber" class="form-control rounded-3" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="SettlementAmount" class="form-label fw-medium">Settlement Amount</label>
+                        <input type="number" id="SettlementAmount" name="SettlementAmount" class="form-control rounded-3" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="SettlementDate" class="form-label fw-medium">Settlement Date</label>
+                        <input type="datetime-local" id="SettlementDate" name="SettlementDate" class="form-control rounded-3" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="CarRegistration" class="form-label fw-medium">Car Registration</label>
+                        <input type="text" id="CarRegistration" name="CarRegistration" class="form-control rounded-3" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Mileage" class="form-label fw-medium">Mileage</label>
+                        <input type="number" id="Mileage" name="Mileage" class="form-control rounded-3" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="ClaimType" class="form-label fw-medium">Claim Type</label>
+                        <select id="ClaimType" name="ClaimType" class="form-select rounded-3" asp-items="Html.GetEnumSelectList<BlockchainTest.Interfaces.ClaimType>()" required>
+                            <option value="">-- Select Claim Type --</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success w-100 mt-4 py-2 fw-bold rounded-3">Add Transaction</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
