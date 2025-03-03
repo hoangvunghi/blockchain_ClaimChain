@@ -6,6 +6,7 @@ namespace BlockchainTest.Models
     {
         public DbSet<BlockModel> Blocks { get; set; }
         public DbSet<TransactionModel> Transactions { get; set; }
+        public DbSet<PendingTransactionModel> PendingTransactions { get; set; }
 
         public BlockChainContext(DbContextOptions<BlockChainContext> options) : base(options)
         {
@@ -22,12 +23,12 @@ namespace BlockchainTest.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BlockModel>()
-        .HasIndex(b => b.BlockNumber)
-        .IsUnique();
+                .HasIndex(b => b.BlockNumber)
+                .IsUnique();
         
-    modelBuilder.Entity<BlockModel>()
-        .HasIndex(b => b.BlockHash)
-        .IsUnique();
+            modelBuilder.Entity<BlockModel>()
+                .HasIndex(b => b.BlockHash)
+                .IsUnique();
 
             // Đảm bảo BlockHash và TransactionHash là duy nhất
             modelBuilder.Entity<BlockModel>()
@@ -35,6 +36,10 @@ namespace BlockchainTest.Models
                 .IsUnique();
 
             modelBuilder.Entity<TransactionModel>()
+                .HasIndex(t => t.TransactionHash)
+                .IsUnique();
+
+            modelBuilder.Entity<PendingTransactionModel>()
                 .HasIndex(t => t.TransactionHash)
                 .IsUnique();
         }

@@ -1,4 +1,4 @@
-@model BlockchainTest.Models.BlockChain
+@model BlockchainViewModel
 
 <div class="container mt-5">
     <!-- Tiêu đề -->
@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var block in Model.Blocks)
+                @foreach (var block in Model.Blockchain.Blocks)
                 {
                     <tr>
                         <td class="fw-bold text-primary">@block.BlockNumber</td>
@@ -85,6 +85,31 @@
                 </div>
                 <button type="submit" class="btn btn-success w-100 mt-4 py-2 fw-bold rounded-3">Add Transaction</button>
             </form>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h5>Pending Transactions (@Model.PendingTransactions.Count / 3)</h5>
+        </div>
+        <div class="card-body">
+            @if (Model.PendingTransactions.Any())
+            {
+                <ul class="list-group">
+                    @foreach (var transaction in Model.PendingTransactions)
+                    {
+                        <li class="list-group-item">
+                            <div><strong>Claim:</strong> @transaction.ClaimNumber</div>
+                            <div><strong>Amount:</strong> @transaction.SettlementAmount.ToString("C")</div>
+                            <div class="text-muted small"><strong>Hash:</strong> @transaction.CalculateTransactionHash()</div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="text-muted">No pending transactions</p>
+            }
         </div>
     </div>
 </div>

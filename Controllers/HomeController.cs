@@ -16,7 +16,12 @@ namespace BlockchainTest.Controllers
 
         public IActionResult Index()
         {
-            return View(_blockchainService.Blockchain);
+            var model = new BlockchainViewModel
+            {
+                Blockchain = _blockchainService.Blockchain,
+                PendingTransactions = _blockchainService.GetPendingTransactions()
+            };
+            return View(model);
         }
 
         [HttpPost]
@@ -24,10 +29,14 @@ namespace BlockchainTest.Controllers
         {
             if (ModelState.IsValid)
             {
-                _blockchainService.AddBlock(new List<ITransaction> { model });
+                _blockchainService.AddTransaction(model);
                 return RedirectToAction("Index");
             }
-            return View("Index", _blockchainService.Blockchain);
+            return View("Index", new BlockchainViewModel 
+            { 
+                Blockchain = _blockchainService.Blockchain,
+                PendingTransactions = _blockchainService.GetPendingTransactions()
+            });
         }
     }
 }

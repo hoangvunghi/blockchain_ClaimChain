@@ -7,6 +7,7 @@ using System.Linq;
 
 public class BlockchainService
 {
+    private const int TRANSACTIONS_PER_BLOCK = 3;
     private readonly BlockChainContext _context;
     public BlockChain Blockchain { get; private set; }
 
@@ -17,81 +18,143 @@ public class BlockchainService
     }
 
     private void InitializeBlockchain()
-{
-    var hasBlocks = _context.Blocks.Any();
-    
-    if (!hasBlocks)
     {
-        Blockchain = new BlockChain();
-        InitializeSampleData();
+        // Đảm bảo database được tạo
+        _context.Database.EnsureCreated();
+        
+        var hasBlocks = _context.Blocks.Any();
+        
+        if (!hasBlocks)
+        {
+            // Chỉ tạo mới nếu chưa có blocks
+            Blockchain = new BlockChain();
+            
+            // Tạo genesis block với 3 transaction mẫu
+            var genesisBlock = new Block(0)
+            {
+                BlockHash = "0000",
+                PreviousBlockHash = "0",
+                CreatedDate = DateTime.UtcNow
+            };
+
+            // Thêm 3 transaction mẫu vào genesis block
+            var sampleTransactions = new List<ITransaction>
+            {
+                new Transaction
+                {
+                    ClaimNumber = "GENESIS-001",
+                    SettlementAmount = 0,
+                    SettlementDate = DateTime.UtcNow,
+                    CarRegistration = "GENESIS",
+                    Mileage = 0,
+                    ClaimType = ClaimType.Collision
+                },
+                new Transaction
+                {
+                    ClaimNumber = "GENESIS-002",
+                    SettlementAmount = 0,
+                    SettlementDate = DateTime.UtcNow,
+                    CarRegistration = "GENESIS",
+                    Mileage = 0,
+                    ClaimType = ClaimType.Theft
+                },
+                new Transaction
+                {
+                    ClaimNumber = "GENESIS-003",
+                    SettlementAmount = 0,
+                    SettlementDate = DateTime.UtcNow,
+                    CarRegistration = "GENESIS",
+                    Mileage = 0,
+                    ClaimType = ClaimType.HailDamage
+                }
+            };
+
+            foreach (var transaction in sampleTransactions)
+            {
+                genesisBlock.AddTransaction(transaction);
+            }
+            
+            var blockModel = new BlockModel
+            {
+                BlockNumber = genesisBlock.BlockNumber,
+                BlockHash = genesisBlock.BlockHash,
+                PreviousBlockHash = genesisBlock.PreviousBlockHash,
+                CreatedDate = genesisBlock.CreatedDate
+            };
+
+            foreach (var transaction in genesisBlock.Transactions)
+            {
+                blockModel.Transactions.Add(new TransactionModel
+                {
+                    ClaimNumber = transaction.ClaimNumber,
+                    SettlementAmount = transaction.SettlementAmount,
+                    SettlementDate = transaction.SettlementDate,
+                    CarRegistration = transaction.CarRegistration,
+                    Mileage = transaction.Mileage,
+                    ClaimType = transaction.ClaimType,
+                    TransactionHash = transaction.CalculateTransactionHash()
+                });
+            }
+            
+            _context.Blocks.Add(blockModel);
+            _context.SaveChanges();
+            
+            Blockchain.Blocks.Add(genesisBlock);
+        }
+        else
+        {
+            // Load dữ liệu từ database nếu đã có
+            LoadBlockchainFromDatabase();
+        }
+    }
+
+    public void AddTransaction(ITransaction transaction)
+    {
+        Blockchain.AddTransaction(transaction);
         SaveBlockchain();
     }
-    else
+
+    public List<ITransaction> GetPendingTransactions()
     {
-        LoadBlockchainFromDatabase();
-    }
-}
-
-
-    private void InitializeSampleData()
-{
-    // Tạo block đầu tiên (Genesis Block)
-    var genesisBlock = new Block(0)
-    {
-        BlockHash = "0000",
-        PreviousBlockHash = "0",  // ✅ Đảm bảo không NULL
-        CreatedDate = DateTime.UtcNow
-    };
-    Blockchain.Blocks.Add(genesisBlock);
-
-    // Thêm giao dịch mẫu
-    var transaction1 = new Transaction
-    {
-        ClaimNumber = "Claim001",
-        SettlementAmount = 1500.00m,
-        SettlementDate = DateTime.UtcNow,
-        CarRegistration = "CAR-123",
-        Mileage = 5000,
-        ClaimType = ClaimType.Collision
-    };
-    Blockchain.AddBlock(new List<ITransaction> { transaction1 });
-
-    var transaction2 = new Transaction
-    {
-        ClaimNumber = "Claim002",
-        SettlementAmount = 2500.00m,
-        SettlementDate = DateTime.UtcNow,
-        CarRegistration = "CAR-456",
-        Mileage = 12000,
-        ClaimType = ClaimType.Theft
-    };
-    Blockchain.AddBlock(new List<ITransaction> { transaction2 });
-}
-
-
-public void SaveBlockchain()
-{
-    // First, clear existing blocks to prevent duplicates
-    if (_context.Blocks.Any())
-    {
-        _context.Blocks.RemoveRange(_context.Blocks);
-        _context.SaveChanges();
+        return Blockchain.GetPendingTransactions();
     }
 
-    foreach (var block in Blockchain.Blocks)
+    public void SaveBlockchain()
     {
-        var blockModel = new BlockModel
+        // Lưu blocks mới
+        foreach (var block in Blockchain.Blocks.Skip(_context.Blocks.Count()))
         {
-            BlockNumber = block.BlockNumber,
-            BlockHash = block.BlockHash,
-            PreviousBlockHash = block.BlockNumber == 0 ? "0" : block.PreviousBlockHash ?? "0",
-            CreatedDate = block.CreatedDate
-        };
+            var blockModel = new BlockModel
+            {
+                BlockNumber = block.BlockNumber,
+                BlockHash = block.BlockHash,
+                PreviousBlockHash = block.PreviousBlockHash,
+                CreatedDate = block.CreatedDate
+            };
 
-        // Lưu giao dịch
-        foreach (var transaction in block.Transactions)
+            foreach (var transaction in block.Transactions)
+            {
+                blockModel.Transactions.Add(new TransactionModel
+                {
+                    ClaimNumber = transaction.ClaimNumber,
+                    SettlementAmount = transaction.SettlementAmount,
+                    SettlementDate = transaction.SettlementDate,
+                    CarRegistration = transaction.CarRegistration,
+                    Mileage = transaction.Mileage,
+                    ClaimType = transaction.ClaimType,
+                    TransactionHash = transaction.CalculateTransactionHash()
+                });
+            }
+
+            _context.Blocks.Add(blockModel);
+        }
+
+        // Lưu pending transactions
+        _context.PendingTransactions.RemoveRange(_context.PendingTransactions);
+        
+        foreach (var transaction in GetPendingTransactions())
         {
-            blockModel.Transactions.Add(new TransactionModel
+            _context.PendingTransactions.Add(new PendingTransactionModel
             {
                 ClaimNumber = transaction.ClaimNumber,
                 SettlementAmount = transaction.SettlementAmount,
@@ -103,58 +166,64 @@ public void SaveBlockchain()
             });
         }
 
-        _context.Blocks.Add(blockModel);
+        _context.SaveChanges();
     }
-
-    _context.SaveChanges();
-}
 
     private void LoadBlockchainFromDatabase()
-{
-    Blockchain = new BlockChain();
-
-    var blocks = _context.Blocks
-        .Include(b => b.Transactions)
-        .OrderBy(b => b.BlockNumber)
-        .ToList();
-
-    foreach (var blockModel in blocks)
     {
-        var block = new Block(blockModel.BlockNumber)
-        {
-            BlockHash = blockModel.BlockHash,
-            PreviousBlockHash = blockModel.PreviousBlockHash,
-            CreatedDate = blockModel.CreatedDate
-        };
+        Blockchain = new BlockChain();
 
-        foreach (var transactionModel in blockModel.Transactions)
+        // Load blocks và transactions đã confirm
+        var blocks = _context.Blocks
+            .Include(b => b.Transactions)
+            .OrderBy(b => b.BlockNumber)
+            .ToList();
+
+        foreach (var blockModel in blocks)
         {
-            block.AddTransaction(new Transaction
+            var block = new Block(blockModel.BlockNumber)
             {
-                ClaimNumber = transactionModel.ClaimNumber,
-                SettlementAmount = transactionModel.SettlementAmount,
-                SettlementDate = transactionModel.SettlementDate,
-                CarRegistration = transactionModel.CarRegistration,
-                Mileage = transactionModel.Mileage,
-                ClaimType = transactionModel.ClaimType
-            });
+                BlockHash = blockModel.BlockHash,
+                PreviousBlockHash = blockModel.PreviousBlockHash,
+                CreatedDate = blockModel.CreatedDate
+            };
+
+            foreach (var transactionModel in blockModel.Transactions)
+            {
+                block.AddTransaction(new Transaction
+                {
+                    ClaimNumber = transactionModel.ClaimNumber,
+                    SettlementAmount = transactionModel.SettlementAmount,
+                    SettlementDate = transactionModel.SettlementDate,
+                    CarRegistration = transactionModel.CarRegistration,
+                    Mileage = transactionModel.Mileage,
+                    ClaimType = transactionModel.ClaimType
+                });
+            }
+
+            Blockchain.Blocks.Add(block);
         }
 
-        // Chỉ thêm block một lần:
-        Blockchain.Blocks.Add(block);
-    }
+        // Khôi phục liên kết NextBlock
+        for (int i = 0; i < Blockchain.Blocks.Count - 1; i++)
+        {
+            Blockchain.Blocks[i].NextBlock = Blockchain.Blocks[i + 1];
+        }
 
-    // Khôi phục liên kết NextBlock
-    for (int i = 0; i < blocks.Count - 1; i++)
-    {
-        Blockchain.Blocks[i].NextBlock = Blockchain.Blocks[i + 1];
-    }
-}
+        // Load pending transactions
+        var pendingTransactions = _context.PendingTransactions.ToList();
 
-    public void AddBlock(List<ITransaction> transactions)
-    {
-        // Tạo và thêm khối mới
-        Blockchain.AddBlock(transactions);
-        SaveBlockchain();
+        foreach (var txn in pendingTransactions)
+        {
+            Blockchain.AddTransaction(new Transaction
+            {
+                ClaimNumber = txn.ClaimNumber,
+                SettlementAmount = txn.SettlementAmount,
+                SettlementDate = txn.SettlementDate,
+                CarRegistration = txn.CarRegistration,
+                Mileage = txn.Mileage,
+                ClaimType = txn.ClaimType
+            });
+        }
     }
 }
