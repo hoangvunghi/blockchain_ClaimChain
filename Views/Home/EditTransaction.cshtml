@@ -1,0 +1,84 @@
+@model EditTransactionViewModel
+
+@{
+    ViewData["Title"] = "Sửa Transaction";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title mb-0">
+                <i class="bi bi-pencil-square"></i> Sửa Transaction
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning" role="alert">
+                <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> Cảnh báo!</h4>
+                <p>Việc sửa đổi dữ liệu trong blockchain sẽ vi phạm tính toàn vẹn của dữ liệu. Trong ứng dụng thực tế, điều này không được phép.</p>
+                <hr>
+                <p class="mb-0">Đây chỉ là demo để minh họa cách blockchain phát hiện sửa đổi trái phép.</p>
+            </div>
+
+            <form asp-action="EditTransaction" method="post">
+                <input type="hidden" asp-for="BlockNumber" />
+                <input type="hidden" asp-for="TransactionId" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="MaSinhVien" class="control-label"></label>
+                            <input asp-for="MaSinhVien" class="form-control" />
+                            <span asp-validation-for="MaSinhVien" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="MaMonHoc" class="control-label"></label>
+                            <input asp-for="MaMonHoc" class="form-control" />
+                            <span asp-validation-for="MaMonHoc" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Diem" class="control-label"></label>
+                            <input asp-for="Diem" class="form-control" />
+                            <span asp-validation-for="Diem" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="NgayLuuDiem" class="control-label"></label>
+                            <input asp-for="NgayLuuDiem" class="form-control" type="datetime-local" />
+                            <span asp-validation-for="NgayLuuDiem" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="DiemLanThu" class="control-label"></label>
+                            <input asp-for="DiemLanThu" class="form-control" />
+                            <span asp-validation-for="DiemLanThu" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group text-center mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save"></i> Lưu thay đổi
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Quay lại
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 
