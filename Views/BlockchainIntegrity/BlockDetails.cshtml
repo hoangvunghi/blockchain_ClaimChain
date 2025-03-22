@@ -1,0 +1,132 @@
+@model Quanlydiem.Services.BlockIntegrityResult
+@using Quanlydiem.Interfaces
+
+@{
+    ViewData["Title"] = $"Chi tiết Block #{Model.BlockNumber}";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Quay lại danh sách
+        </a>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header @(Model.IsValid ? "bg-success" : "bg-danger") text-white">
+                <h5 class="mb-0">Thông tin Block</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Block Number:</label>
+                            <p>@Model.BlockNumber</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Trạng thái:</label>
+                            @if (Model.IsValid)
+                            {
+                                <p class="text-success"><i class="fas fa-check-circle"></i> Hợp lệ</p>
+                            }
+                            else
+                            {
+                                <p class="text-danger"><i class="fas fa-exclamation-triangle"></i> Đã bị sửa đổi</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Merkle Root ban đầu (đã lưu):</label>
+                            <p class="text-break text-primary">@Model.StoredMerkleRoot</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Merkle Root hiện tại (tính toán lại):</label>
+                            <p class="text-break @(!Model.IsValid ? "text-danger" : "text-success")">@Model.CalculatedMerkleRoot</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> <strong>Giải thích:</strong> Merkle root là một hash duy nhất đại diện cho tất cả
+                            các giao dịch trong block. Nếu có bất kỳ giao dịch nào bị sửa đổi, Merkle root tính toán lại sẽ khác với
+                            Merkle root ban đầu đã lưu, cho biết dữ liệu đã bị can thiệp.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (!Model.IsValid)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">Thông tin giao dịch trong block</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-circle"></i> <strong>Lưu ý:</strong> Phát hiện block đã bị sửa đổi thông qua Merkle root.
+                        Tuy nhiên, hệ thống không thể xác định chính xác giao dịch nào đã bị sửa đổi vì hash ban đầu của từng giao dịch không được lưu trữ riêng biệt.
+                    </div>
+                    
+                    <div class="table-responsive mt-3">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Vị trí</th>
+                                    <th>Mã sinh viên</th>
+                                    <th>Mã môn học</th>
+                                    <th>Điểm</th>
+                                    <th>Ngày lưu điểm</th>
+                                    <th>Lần thứ</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    var transactions = ViewBag.Transactions as List<ITransaction>;
+                                    if (transactions != null)
+                                    {
+                                        for (int i = 0; i < transactions.Count; i++)
+                                        {
+                                            var tx = transactions[i];
+                                            <tr>
+                                                <td>@(i + 1)</td>
+                                                <td>@tx.masinhvien</td>
+                                                <td>@tx.mamonhoc</td>
+                                                <td>@tx.diem</td>
+                                                <td>@tx.ngayluudiem.ToString("dd/MM/yyyy HH:mm")</td>
+                                                <td>@tx.diemlanthu</td>
+                                                <td>
+                                                    <span class="badge badge-warning">Không xác định</span>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+} 

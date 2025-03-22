@@ -3116,11 +3116,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\learning\\blockchain\\Quanlydiem\\Quanlydiem.csproj",
+      "projectUniqueName": "D:\\learning\\blockchain\\Quanlydiem2\\Quanlydiem.csproj",
       "projectName": "Quanlydiem",
-      "projectPath": "D:\\learning\\blockchain\\Quanlydiem\\Quanlydiem.csproj",
+      "projectPath": "D:\\learning\\blockchain\\Quanlydiem2\\Quanlydiem.csproj",
       "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-      "outputPath": "D:\\learning\\blockchain\\Quanlydiem\\obj\\",
+      "outputPath": "D:\\learning\\blockchain\\Quanlydiem2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config"

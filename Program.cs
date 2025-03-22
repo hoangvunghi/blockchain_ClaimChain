@@ -1,5 +1,6 @@
 using Quanlydiem.Models;    
 using Microsoft.EntityFrameworkCore;
+using Quanlydiem.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,16 @@ builder.Services.AddControllersWithViews();
 
 // Đăng ký BlockchainService là Scoped (thay vì Singleton)
 builder.Services.AddScoped<BlockchainService>();
+
+// Đăng ký BlockChain như là một Singleton để có thể sử dụng trong toàn ứng dụng
+builder.Services.AddSingleton<BlockChain>(provider => {
+    // Lấy BlockchainService từ scope hiện tại (khi khởi tạo ứng dụng)
+    var scope = provider.CreateScope();
+    var blockchainService = scope.ServiceProvider.GetRequiredService<BlockchainService>();
+    
+    // Trả về instance của BlockChain từ BlockchainService
+    return blockchainService.Blockchain;
+});
 
 // Đăng ký BlockChainContext với SQLite
 builder.Services.AddDbContext<BlockChainContext>(options =>

@@ -2,7 +2,8 @@ namespace Quanlydiem.Models
 {
     using Quanlydiem.Interfaces; 
     using System.Collections.Generic; 
-    using System; 
+    using System;
+    using Quanlydiem.Services;
     
     public class BlockChain
     {
@@ -11,9 +12,15 @@ namespace Quanlydiem.Models
         public List<IBlock> Blocks { get; } = new List<IBlock>();
         private List<ITransaction> pendingTransactions = new List<ITransaction>();
         private const int TRANSACTIONS_PER_BLOCK = 3;
+        
+        // Sự kiện để thông báo khi phát hiện block bị sửa đổi
+        public event EventHandler<BlockIntegrityEventArgs> BlockIntegrityChanged;
 
         public void AddTransaction(ITransaction transaction)
         {
+            // Kiểm tra tính toàn vẹn của blockchain trước khi thêm transaction mới
+            VerifyBlockchainIntegrity();
+            
             pendingTransactions.Add(transaction);
             
             if (pendingTransactions.Count >= TRANSACTIONS_PER_BLOCK)
@@ -77,5 +84,33 @@ namespace Quanlydiem.Models
         {
             return new List<ITransaction>(pendingTransactions);
         }
+        
+        /// <summary>
+        /// Kiểm tra tính toàn vẹn của blockchain bằng cách tính toán lại Merkle root
+        /// </summary>
+        public List<BlockIntegrityResult> VerifyBlockchainIntegrity()
+        {
+            var integrityService = new BlockchainIntegrityService(this);
+            var results = integrityService.VerifyBlockchainIntegrity();
+            
+            // Nếu phát hiện có block bị sửa đổi, kích hoạt sự kiện
+            if (results.Count > 0)
+            {
+                BlockIntegrityChanged?.Invoke(this, new BlockIntegrityEventArgs 
+                { 
+                    IntegrityResults = results 
+                });
+            }
+            
+            return results;
+        }
+    }
+    
+    /// <summary>
+    /// Lớp chứa thông tin về sự kiện khi phát hiện blockchain bị sửa đổi
+    /// </summary>
+    public class BlockIntegrityEventArgs : EventArgs
+    {
+        public List<BlockIntegrityResult> IntegrityResults { get; set; } = new List<BlockIntegrityResult>();
     }
 }

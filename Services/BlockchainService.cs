@@ -5,6 +5,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+/*
+HƯỚNG DẪN THAY ĐỔI THUỘC TÍNH:
+Trong file này, có 5 thuộc tính chính có thể được thay đổi:
+1. masinhvien/MaSinhVien: Hiện tại là "Mã sinh viên", có thể thay đổi thành thuộc tính khác
+2. mamonhoc/MaMonHoc: Hiện tại là "Mã môn học", có thể thay đổi thành thuộc tính khác
+3. diem/Diem: Hiện tại là "Điểm", có thể thay đổi thành thuộc tính khác
+4. ngayluudiem/NgayLuuDiem: Hiện tại là "Ngày lưu điểm", có thể thay đổi thành thuộc tính khác
+5. diemlanthu/DiemLanThu: Hiện tại là "Điểm lần thứ", có thể thay đổi thành thuộc tính khác
+
+Các vị trí cần thay đổi:
+- Dòng 42-67: Tạo các transaction mẫu trong InitializeBlockchain
+- Dòng 83-90: Thêm transaction vào blockModel
+- Dòng 318: Tham số của hàm EditTransaction
+- Dòng 351-356: Mapping từ transaction sang tempBlock
+- Dòng 367-372: Cập nhật transaction
+- Dòng 373-379: Tạo transaction mới để tính hash
+- Dòng 392-398: Thêm transaction vào updatedTempBlock
+*/
+
 public class BlockchainService
 {
     private const int TRANSACTIONS_PER_BLOCK = 3;
@@ -42,26 +61,41 @@ public class BlockchainService
             {
                 new Transaction
                 {
+                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                     masinhvien = "A45156",
+                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                     mamonhoc = "INT1001",
+                    // THUỘC TÍNH 3: Có thể thay đổi diem
                     diem = 8,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                     ngayluudiem = DateTime.UtcNow,
+                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                     diemlanthu = 1
                 },
                 new Transaction
                 {
+                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                     masinhvien = "A45157",
+                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                     mamonhoc = "INT1001",
+                    // THUỘC TÍNH 3: Có thể thay đổi diem
                     diem = 9,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                     ngayluudiem = DateTime.UtcNow,
+                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                     diemlanthu = 1
                 },
                 new Transaction
                 {
+                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                     masinhvien = "A45158",
+                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                     mamonhoc = "INT1001",
+                    // THUỘC TÍNH 3: Có thể thay đổi diem
                     diem = 10,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                     ngayluudiem = DateTime.UtcNow,
+                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                     diemlanthu = 1
                 }
             };
@@ -87,10 +121,15 @@ public class BlockchainService
             {
                 blockModel.Transactions.Add(new TransactionModel
                 {
+                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                     masinhvien = transaction.masinhvien,
+                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                     mamonhoc = transaction.mamonhoc,
+                    // THUỘC TÍNH 3: Có thể thay đổi diem
                     diem = transaction.diem,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                     ngayluudiem = transaction.ngayluudiem,
+                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                     diemlanthu = transaction.diemlanthu,
                     TransactionHash = transaction.CalculateTransactionHash()
                 });
@@ -139,10 +178,15 @@ public class BlockchainService
                 {
                     blockModel.Transactions.Add(new TransactionModel
                     {
+                        // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                         masinhvien = transaction.masinhvien,
+                        // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                         mamonhoc = transaction.mamonhoc,
+                        // THUỘC TÍNH 3: Có thể thay đổi diem
                         diem = transaction.diem,
+                        // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                         ngayluudiem = transaction.ngayluudiem,
+                        // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                         diemlanthu = transaction.diemlanthu,
                         TransactionHash = transaction.CalculateTransactionHash()
                     });
@@ -162,10 +206,15 @@ public class BlockchainService
                 {
                     var pendingTxn = new PendingTransactionModel
                     {
+                        // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                         masinhvien = transaction.masinhvien,
+                        // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                         mamonhoc = transaction.mamonhoc,
+                        // THUỘC TÍNH 3: Có thể thay đổi diem
                         diem = transaction.diem,
+                        // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                         ngayluudiem = transaction.ngayluudiem,
+                        // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                         diemlanthu = transaction.diemlanthu,
                         TransactionHash = transaction.CalculateTransactionHash()
                     };
@@ -207,10 +256,15 @@ public class BlockchainService
             {
                 block.AddTransaction(new Transaction
                 {
+                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                     masinhvien = transactionModel.masinhvien,
+                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                     mamonhoc = transactionModel.mamonhoc,
+                    // THUỘC TÍNH 3: Có thể thay đổi diem
                     diem = transactionModel.diem,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                     ngayluudiem = transactionModel.ngayluudiem,
+                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                     diemlanthu = transactionModel.diemlanthu
                 });
             }
@@ -231,10 +285,15 @@ public class BlockchainService
         {
             Blockchain.AddTransaction(new Transaction
             {
+                // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                 masinhvien = txn.masinhvien,
+                // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                 mamonhoc = txn.mamonhoc,
+                // THUỘC TÍNH 3: Có thể thay đổi diem
                 diem = txn.diem,
+                // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                 ngayluudiem = txn.ngayluudiem,
+                // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                 diemlanthu = txn.diemlanthu
             });
         }
@@ -287,10 +346,15 @@ public class BlockchainService
                 {
                     tempBlock.AddTransaction(new Transaction
                     {
+                        // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                         masinhvien = txn.masinhvien,
+                        // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                         mamonhoc = txn.mamonhoc,
+                        // THUỘC TÍNH 3: Có thể thay đổi diem
                         diem = txn.diem,
+                        // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                         ngayluudiem = txn.ngayluudiem,
+                        // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                         diemlanthu = txn.diemlanthu
                     });
                 }
@@ -315,6 +379,7 @@ public class BlockchainService
         }
     }
 
+    // THUỘC TÍNH 1-5: Tham số của hàm EditTransaction có thể thay đổi
     public bool EditTransaction(int blockNumber, int transactionId, string masinhvien, string mamonhoc, int diem, DateTime ngayluudiem, int diemlanthu)
     {
         try
@@ -348,10 +413,15 @@ public class BlockchainService
             {
                 tempBlock.AddTransaction(new Transaction
                 {
+                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                     masinhvien = txn.masinhvien,
+                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                     mamonhoc = txn.mamonhoc,
+                    // THUỘC TÍNH 3: Có thể thay đổi diem
                     diem = txn.diem,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                     ngayluudiem = txn.ngayluudiem,
+                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                     diemlanthu = txn.diemlanthu
                 });
             }
@@ -366,17 +436,27 @@ public class BlockchainService
             }
 
             // Nếu Merkle Root khớp, tiến hành sửa đổi
+            // THUỘC TÍNH 1: Có thể thay đổi masinhvien
             transaction.masinhvien = masinhvien;
+            // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
             transaction.mamonhoc = mamonhoc;
+            // THUỘC TÍNH 3: Có thể thay đổi diem
             transaction.diem = diem;
+            // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
             transaction.ngayluudiem = ngayluudiem;
+            // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
             transaction.diemlanthu = diemlanthu;
             transaction.TransactionHash = new Transaction
             {
+                // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                 masinhvien = masinhvien,
+                // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                 mamonhoc = mamonhoc,
+                // THUỘC TÍNH 3: Có thể thay đổi diem
                 diem = diem,
+                // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                 ngayluudiem = ngayluudiem,
+                // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                 diemlanthu = diemlanthu
             }.CalculateTransactionHash();
 
@@ -392,10 +472,15 @@ public class BlockchainService
             {
                 updatedTempBlock.AddTransaction(new Transaction
                 {
+                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
                     masinhvien = txn.masinhvien,
+                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
                     mamonhoc = txn.mamonhoc,
+                    // THUỘC TÍNH 3: Có thể thay đổi diem
                     diem = txn.diem,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
                     ngayluudiem = txn.ngayluudiem,
+                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
                     diemlanthu = txn.diemlanthu
                 });
             }

@@ -16,6 +16,7 @@ namespace Quanlydiem.Models
         public string PreviousBlockHash { get; set; }
         public string MerkleRoot { get; set; }
         public IBlock NextBlock { get; set; }
+        private List<string> OriginalTransactionHashes { get; set; } = new List<string>();
 
         public Block(int blockNumber)
         {
@@ -26,7 +27,7 @@ namespace Quanlydiem.Models
         public void AddTransaction(ITransaction transaction)
         {
             Transactions.Add(transaction);
-            MerkleRoot = CalculateMerkleRoot();
+            OriginalTransactionHashes.Add(transaction.CalculateTransactionHash());
         }
 
         public string CalculateMerkleRoot()
@@ -37,7 +38,10 @@ namespace Quanlydiem.Models
 
         public string CalculateBlockHash()
         {
-            MerkleRoot = CalculateMerkleRoot();
+            if (string.IsNullOrEmpty(MerkleRoot))
+            {
+                MerkleRoot = CalculateMerkleRoot();
+            }
             
             string blockData = System.Text.Json.JsonSerializer.Serialize(new
             {
@@ -78,8 +82,9 @@ namespace Quanlydiem.Models
                 }
             }
             
-            string calculatedMerkleRoot = CalculateMerkleRoot();
-            if (MerkleRoot != calculatedMerkleRoot)
+            string recalculatedMerkleRoot = CalculateMerkleRoot();
+            
+            if (MerkleRoot != recalculatedMerkleRoot)
             {
                 isValid = false;
                 if (verbose)
