@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Tải lên ảnh vào Blockchain";
+}
+
+<div class="container">
+    <h2 class="mt-4 mb-4">@ViewData["Title"]</h2>
+    
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Thêm ảnh vào Blockchain</h5>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(TempData["SuccessMessage"] as string))
+                    {
+                        <div class="alert alert-success">
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+                    
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    
+                    <form asp-action="Upload" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="masinhvien" class="control-label">Mã sinh viên</label>
+                            <input type="text" id="masinhvien" name="masinhvien" class="form-control" required />
+                        </div>
+                        
+                        <div class="form-group mt-3">
+                            <label for="mamonhoc" class="control-label">Mã môn học</label>
+                            <input type="text" id="mamonhoc" name="mamonhoc" class="form-control" required />
+                        </div>
+                        
+                        <div class="form-group mt-3">
+                            <label for="imageFile" class="control-label">Chọn ảnh</label>
+                            <input type="file" id="imageFile" name="imageFile" class="form-control" accept="image/*" required />
+                            <small class="form-text text-muted">
+                                Hỗ trợ định dạng: JPEG, PNG, GIF, WEBP. Kích thước tối đa: 5MB.
+                            </small>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <div class="image-preview-container" style="display: none;">
+                                <h6>Xem trước ảnh:</h6>
+                                <img id="image-preview" class="img-fluid mt-2" style="max-height: 300px;" />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-upload"></i> Tải lên
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Quay lại
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Hiển thị xem trước ảnh khi chọn file
+            $('#imageFile').change(function() {
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        $('#image-preview').attr('src', e.target.result);
+                        $('.image-preview-container').show();
+                    }
+                    
+                    reader.readAsDataURL(this.files[0]);
+                    
+                    // Kiểm tra kích thước file
+                    var fileSize = this.files[0].size; // Bytes
+                    var maxSize = 5 * 1024 * 1024; // 5MB
+                    
+                    if (fileSize > maxSize) {
+                        alert('Kích thước ảnh quá lớn. Vui lòng chọn ảnh dưới 5MB.');
+                        this.value = '';
+                        $('.image-preview-container').hide();
+                    }
+                }
+            });
+        });
+    </script>
+} 
