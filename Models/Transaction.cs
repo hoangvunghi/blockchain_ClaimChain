@@ -23,6 +23,9 @@ namespace Quanlydiem.Models
         // Thuộc tính mới để lưu trữ dữ liệu ảnh dưới dạng Base64
         public string? ImageData { get; set; }
         
+        // Thuộc tính để lưu trữ hash của ảnh thay vì dữ liệu base64
+        public string? ImageHash { get; set; }
+        
         // Thuộc tính để đánh dấu giao dịch có chứa ảnh hay không
         public bool HasImage { get; set; } = false;
         
@@ -31,8 +34,13 @@ namespace Quanlydiem.Models
             // LƯU Ý: Nếu thay đổi tên các thuộc tính, cần cập nhật cả dòng này
             string txnData = masinhvien + mamonhoc + diem + ngayluudiem + diemlanthu;
             
-            // Nếu có dữ liệu ảnh, thêm vào để hash
-            if (HasImage && !string.IsNullOrEmpty(ImageData))
+            // Nếu có hash ảnh, ưu tiên sử dụng ImageHash
+            if (HasImage && !string.IsNullOrEmpty(ImageHash))
+            {
+                txnData += ImageHash;
+            }
+            // Trường hợp lưu trực tiếp ImageData (code cũ)
+            else if (HasImage && !string.IsNullOrEmpty(ImageData))
             {
                 txnData += ImageData;
             }

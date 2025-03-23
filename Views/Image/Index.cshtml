@@ -1,4 +1,4 @@
-@model List<Quanlydiem.Models.Transaction>
+@model IEnumerable<Quanlydiem.Models.Transaction>
 @inject Quanlydiem.Services.ImageService ImageService
 
 @{
@@ -6,85 +6,78 @@
 }
 
 <div class="container">
-    <h2 class="mt-4 mb-4">@ViewData["Title"]</h2>
-    
-    @if (!string.IsNullOrEmpty(TempData["SuccessMessage"] as string))
+    <div class="row mb-3">
+        <div class="col">
+            <h2>Quản lý ảnh trên blockchain</h2>
+            <p class="lead">Danh sách các ảnh đã được lưu trong blockchain</p>
+        </div>
+        <div class="col-auto">
+            <a asp-action="Upload" class="btn btn-primary">
+                <i class="bi bi-upload"></i> Tải lên ảnh mới
+            </a>
+            <a asp-action="VerifyImage" class="btn btn-success">
+                <i class="bi bi-search"></i> Xác minh ảnh
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
             @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
-    
-    <div class="d-flex justify-content-between mb-4">
-        <a asp-action="Upload" class="btn btn-primary">
-            <i class="fas fa-upload"></i> Tải lên ảnh mới
-        </a>
-    </div>
-    
+
     @if (!Model.Any())
     {
         <div class="alert alert-info">
-            <i class="fas fa-info-circle"></i> Chưa có ảnh nào được lưu trữ trên blockchain.
+            Chưa có ảnh nào được lưu trữ trong blockchain.
         </div>
     }
     else
     {
-        <div class="row">
-            @foreach (var transaction in Model)
-            {
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-img-top" style="height: 200px; overflow: hidden;">
-                            @if (!string.IsNullOrEmpty(transaction.ImageData))
-                            {
-                                string mimeType = ImageService.GetMimeType(transaction.ImageData);
-                                <img src="data:@mimeType;base64,@transaction.ImageData" class="img-fluid" alt="Blockchain Image" style="object-fit: cover; width: 100%; height: 100%;">
-                            }
-                            else
-                            {
-                                <div class="text-center p-5 bg-light">
-                                    <i class="fas fa-image fa-3x text-muted"></i>
-                                    <p class="mt-2">Không có ảnh</p>
-                                </div>
-                            }
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">@transaction.masinhvien</h5>
-                            <p class="card-text">
-                                <strong>Mã môn học:</strong> @transaction.mamonhoc<br>
-                                <strong>Thời gian:</strong> @transaction.ngayluudiem.ToString("dd/MM/yyyy HH:mm")
-                            </p>
-                            @{
-                                // Tìm block và index của transaction
-                                int blockNumber = -1;
-                                int transactionIndex = -1;
-                                
-                                foreach (var block in ViewContext.HttpContext.RequestServices.GetService<Quanlydiem.Models.BlockChain>().Blocks)
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Block</th>
+                        <th>Mã sinh viên</th>
+                        <th>Mã môn học</th>
+                        <th>Ngày lưu</th>
+                        <th>Dữ liệu</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var transaction in Model)
+                    {
+                        <tr>
+                            <td>@(transaction.Id / 100)</td>
+                            <td>@transaction.masinhvien</td>
+                            <td>@transaction.mamonhoc</td>
+                            <td>@transaction.ngayluudiem.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(transaction.ImageHash))
                                 {
-                                    for (int i = 0; i < block.Transactions.Count; i++)
-                                    {
-                                        if (block.Transactions[i] == transaction)
-                                        {
-                                            blockNumber = block.BlockNumber;
-                                            transactionIndex = i;
-                                            break;
-                                        }
-                                    }
-                                    
-                                    if (blockNumber != -1) break;
+                                    <span class="badge bg-info">Hash</span>
+                                    <small class="text-muted">@transaction.ImageHash.Substring(0, 12)...</small>
                                 }
-                            }
-                            
-                            @if (blockNumber != -1 && transactionIndex != -1)
-                            {
-                                <a asp-action="Details" asp-route-blockNumber="@blockNumber" asp-route-transactionIndex="@transactionIndex" class="btn btn-sm btn-info">
-                                    <i class="fas fa-info-circle"></i> Chi tiết
+                                else if (!string.IsNullOrEmpty(transaction.ImageData))
+                                {
+                                    <span class="badge bg-warning">Base64</span>
+                                    <small class="text-muted">@transaction.ImageData.Substring(0, 12)...</small>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="Details" asp-route-blockNumber="@(transaction.Id / 100)" asp-route-transactionIndex="@(transaction.Id % 100)" class="btn btn-sm btn-info">
+                                    <i class="bi bi-info-circle"></i> Chi tiết
                                 </a>
-                            }
-                        </div>
-                    </div>
-                </div>
-            }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     }
 </div> 

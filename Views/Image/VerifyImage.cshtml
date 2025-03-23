@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Xác minh ảnh";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card mt-4">
+                <div class="card-header bg-primary text-white">
+                    <h4>Xác minh ảnh có tồn tại trong blockchain hay không</h4>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Hãy tải lên ảnh cần xác minh để kiểm tra xem ảnh đã tồn tại trong blockchain hay chưa.
+                    </p>
+                    
+                    <form asp-action="VerifyImage" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Chọn ảnh cần xác minh:</label>
+                            <input type="file" name="imageFile" class="form-control" accept="image/*" required />
+                            <small class="text-muted">Hệ thống sẽ tính toán hash của ảnh và tìm kiếm trong blockchain</small>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Xác minh ảnh</button>
+                            <a asp-action="Index" class="btn btn-outline-secondary">Quay lại danh sách</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

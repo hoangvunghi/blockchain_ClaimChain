@@ -1,0 +1,76 @@
+@model IEnumerable<Quanlydiem.Models.Transaction>
+@{
+    ViewData["Title"] = "Kết quả xác minh ảnh";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card mt-4">
+                <div class="card-header bg-primary text-white">
+                    <h4>Kết quả xác minh ảnh</h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert @(ViewBag.MatchingCount > 0 ? "alert-success" : "alert-warning")">
+                        <h5>
+                            @if (ViewBag.MatchingCount > 0)
+                            {
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Tìm thấy @ViewBag.MatchingCount kết quả trùng khớp trong blockchain!</span>
+                            }
+                            else
+                            {
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                <span>Không tìm thấy kết quả trùng khớp trong blockchain.</span>
+                            }
+                        </h5>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5>Hash SHA256 của ảnh:</h5>
+                        <div class="bg-light p-3 rounded">
+                            <code>@ViewBag.ImageHash</code>
+                        </div>
+                    </div>
+                    
+                    @if (Model.Any())
+                    {
+                        <h5>Danh sách các giao dịch có ảnh trùng khớp:</h5>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Block</th>
+                                    <th>Mã sinh viên</th>
+                                    <th>Mã môn học</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var transaction in Model)
+                                {
+                                    <tr>
+                                        <td>@(transaction.Id)</td>
+                                        <td>@transaction.masinhvien</td>
+                                        <td>@transaction.mamonhoc</td>
+                                        <td>@transaction.ngayluudiem.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                        <td>
+                                            <a asp-action="Details" asp-route-blockNumber="@(transaction.Id / 100)" asp-route-transactionIndex="@(transaction.Id % 100)" class="btn btn-sm btn-info">
+                                                Chi tiết
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    
+                    <div class="mt-4">
+                        <a asp-action="VerifyImage" class="btn btn-primary">Xác minh ảnh khác</a>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Quay lại danh sách</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
