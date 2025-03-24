@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0aoO8PZNyU0=",
+  "dgSpecHash": "FzSmhispIg8=",
   "success": true,
-  "projectFilePath": "D:\\learning\\blockchain\\Quanlydiem2\\Quanlydiem.csproj",
+  "projectFilePath": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\Quanlydiem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

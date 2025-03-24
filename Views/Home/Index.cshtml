@@ -170,7 +170,10 @@ bao gồm cả trong phần HTML và JavaScript.
                             <th>Block #</th>
                             <th>Created Date</th>
                             <th>Transactions</th>
+                            <th>Block Hash</th>
+                            <th>Previous Block Hash</th>
                             <th>Merkle Root</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -200,6 +203,26 @@ bao gồm cả trong phần HTML và JavaScript.
                                 <td>@block.Transactions.Count</td>
                                 <td>
                                     <div class="d-flex align-items-center">
+                                        <span class="text-truncate" style="max-width: 150px;">@block.BlockHash</span>
+                                        <button class="btn btn-sm btn-outline-secondary ms-2 copy-btn" 
+                                                data-clipboard-text="@block.BlockHash" 
+                                                title="Copy to clipboard">
+                                            <i class="bi bi-clipboard"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="text-truncate" style="max-width: 150px;">@block.PreviousBlockHash</span>
+                                        <button class="btn btn-sm btn-outline-secondary ms-2 copy-btn" 
+                                                data-clipboard-text="@block.PreviousBlockHash" 
+                                                title="Copy to clipboard">
+                                            <i class="bi bi-clipboard"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
                                         <span class="text-truncate" style="max-width: 150px;">@block.MerkleRoot</span>
                                         <button class="btn btn-sm btn-outline-secondary ms-2 copy-btn" 
                                                 data-clipboard-text="@block.MerkleRoot" 
@@ -215,7 +238,7 @@ bao gồm cả trong phần HTML và JavaScript.
                                 </td>
                             </tr>
                             <tr class="transaction-details-row">
-                                <td colspan="5" class="p-0">
+                                <td colspan="7" class="p-0">
                                     <div class="collapse" id="transactions-@block.BlockNumber">
                                         <div class="card card-body border-0 bg-light">
                                             <h5 class="card-title">Transactions in Block #@block.BlockNumber</h5>
