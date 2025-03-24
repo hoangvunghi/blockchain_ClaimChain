@@ -65,5 +65,92 @@ namespace Quanlydiem.Controllers
             bool isValid = _blockchainService.VerifyBlockchainIntegrity();
             return Json(new { isValid });
         }
+
+        // RSA Encryption Services
+        private readonly string PublicKeyFile = "wwwroot/publicKey.xml";
+        private readonly string PrivateKeyFile = "wwwroot/privateKey.xml";
+
+        [HttpGet]
+        public IActionResult GenerateKeys()
+        {
+            using (var rsa = new System.Security.Cryptography.RSACryptoServiceProvider(2048))
+            {
+                rsa.PersistKeyInCsp = false;
+                string publicKey = rsa.ToXmlString(false);
+                string privateKey = rsa.ToXmlString(true);
+                System.IO.File.WriteAllText(PublicKeyFile, publicKey);
+                System.IO.File.WriteAllText(PrivateKeyFile, privateKey);
+            }
+            TempData["SuccessMessage"] = "Bộ khóa RSA đã được tạo thành công!";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Encrypt(string text)
+        {
+            if (!System.IO.File.Exists(PublicKeyFile))
+                return Json(new { success = false, message = "Không tìm thấy khóa công khai!" });
+
+            using (var rsa = new System.Security.Cryptography.RSACryptoServiceProvider(2048))
+            {
+                rsa.PersistKeyInCsp = false;
+                rsa.FromXmlString(System.IO.File.ReadAllText(PublicKeyFile));
+                byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(text);
+                byte[] encryptedBytes = rsa.Encrypt(inputBytes, true);
+                string encryptedText = Convert.ToBase64String(encryptedBytes);
+                return Json(new { success = true, encryptedText });
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Decrypt(string encryptedText)
+        {
+            if (!System.IO.File.Exists(PrivateKeyFile))
+                return Json(new { success = false, message = "Không tìm thấy khóa riêng tư!" });
+
+            using (var rsa = new System.Security.Cryptography.RSACryptoServiceProvider(2048))
+            {
+                rsa.PersistKeyInCsp = false;
+                rsa.FromXmlString(System.IO.File.ReadAllText(PrivateKeyFile));
+                byte[] encryptedBytes = Convert.FromBase64String(encryptedText);
+                byte[] decryptedBytes = rsa.Decrypt(encryptedBytes, true);
+                string decryptedText = System.Text.Encoding.UTF8.GetString(decryptedBytes);
+                return Json(new { success = true, decryptedText });
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Sign(string text)
+        {
+            if (!System.IO.File.Exists(PrivateKeyFile))
+                return Json(new { success = false, message = "Không tìm thấy khóa riêng tư!" });
+
+            using (var rsa = new System.Security.Cryptography.RSACryptoServiceProvider(2048))
+            {
+                rsa.PersistKeyInCsp = false;
+                rsa.FromXmlString(System.IO.File.ReadAllText(PrivateKeyFile));
+                byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(text);
+                byte[] signatureBytes = rsa.SignData(inputBytes, System.Security.Cryptography.SHA256.Create());
+                string signature = Convert.ToBase64String(signatureBytes);
+                return Json(new { success = true, signature });
+            }
+        }
+
+        [HttpPost]
+        public IActionResult VerifySignature(string text, string signature)
+        {
+            if (!System.IO.File.Exists(PublicKeyFile))
+                return Json(new { success = false, message = "Không tìm thấy khóa công khai!" });
+
+            using (var rsa = new System.Security.Cryptography.RSACryptoServiceProvider(2048))
+            {
+                rsa.PersistKeyInCsp = false;
+                rsa.FromXmlString(System.IO.File.ReadAllText(PublicKeyFile));
+                byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(text);
+                byte[] signatureBytes = Convert.FromBase64String(signature);
+                bool isVerified = rsa.VerifyData(inputBytes, System.Security.Cryptography.SHA256.Create(), signatureBytes);
+                return Json(new { success = true, isVerified });
+            }
+        }
     }
 }

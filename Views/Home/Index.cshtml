@@ -354,6 +354,118 @@ bao gồm cả trong phần HTML và JavaScript.
     </div>
 </div>
 
+<!-- RSA Encryption Section -->
+<div class="card shadow-sm mb-5">
+    <div class="card-header bg-info text-white">
+        <h3 class="card-title mb-0">
+            <i class="bi bi-shield-lock"></i> Mã hóa và Chữ ký RSA
+        </h3>
+    </div>
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-md-12 text-center mb-3">
+                <a asp-action="GenerateKeys" class="btn btn-primary">
+                    <i class="bi bi-key"></i> Tạo cặp khóa mới
+                </a>
+            </div>
+            <div class="col-md-12">
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle"></i> Sử dụng mã hóa RSA để bảo vệ dữ liệu và xác thực chữ ký số. Tạo cặp khóa trước khi sử dụng các chức năng khác.
+                </div>
+            </div>
+        </div>
+
+        <ul class="nav nav-tabs" id="cryptoTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="encrypt-tab" data-bs-toggle="tab" data-bs-target="#encrypt" type="button" role="tab" aria-controls="encrypt" aria-selected="true">Mã hóa</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="decrypt-tab" data-bs-toggle="tab" data-bs-target="#decrypt" type="button" role="tab" aria-controls="decrypt" aria-selected="false">Giải mã</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="sign-tab" data-bs-toggle="tab" data-bs-target="#sign" type="button" role="tab" aria-controls="sign" aria-selected="false">Ký dữ liệu</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="verify-tab" data-bs-toggle="tab" data-bs-target="#verify" type="button" role="tab" aria-controls="verify" aria-selected="false">Xác thực chữ ký</button>
+            </li>
+        </ul>
+        <div class="tab-content p-3 border border-top-0 rounded-bottom" id="cryptoTabsContent">
+            <!-- Mã hóa Tab -->
+            <div class="tab-pane fade show active" id="encrypt" role="tabpanel" aria-labelledby="encrypt-tab">
+                <div class="mb-3">
+                    <label for="encryptText" class="form-label">Dữ liệu cần mã hóa</label>
+                    <textarea id="encryptText" class="form-control" rows="3" placeholder="Nhập dữ liệu cần mã hóa"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button id="btnEncrypt" class="btn btn-primary">
+                        <i class="bi bi-lock"></i> Mã hóa
+                    </button>
+                </div>
+                <div class="mb-3">
+                    <label for="encryptResult" class="form-label">Kết quả mã hóa</label>
+                    <textarea id="encryptResult" class="form-control" rows="4" readonly></textarea>
+                </div>
+            </div>
+            
+            <!-- Giải mã Tab -->
+            <div class="tab-pane fade" id="decrypt" role="tabpanel" aria-labelledby="decrypt-tab">
+                <div class="mb-3">
+                    <label for="decryptText" class="form-label">Dữ liệu cần giải mã</label>
+                    <textarea id="decryptText" class="form-control" rows="4" placeholder="Nhập dữ liệu đã mã hóa"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button id="btnDecrypt" class="btn btn-success">
+                        <i class="bi bi-unlock"></i> Giải mã
+                    </button>
+                </div>
+                <div class="mb-3">
+                    <label for="decryptResult" class="form-label">Kết quả giải mã</label>
+                    <textarea id="decryptResult" class="form-control" rows="3" readonly></textarea>
+                </div>
+            </div>
+            
+            <!-- Ký dữ liệu Tab -->
+            <div class="tab-pane fade" id="sign" role="tabpanel" aria-labelledby="sign-tab">
+                <div class="mb-3">
+                    <label for="signText" class="form-label">Dữ liệu cần ký</label>
+                    <textarea id="signText" class="form-control" rows="3" placeholder="Nhập dữ liệu cần ký"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button id="btnSign" class="btn btn-primary">
+                        <i class="bi bi-pen"></i> Ký dữ liệu
+                    </button>
+                </div>
+                <div class="mb-3">
+                    <label for="signResult" class="form-label">Chữ ký</label>
+                    <textarea id="signResult" class="form-control" rows="4" readonly></textarea>
+                </div>
+            </div>
+            
+            <!-- Xác thực chữ ký Tab -->
+            <div class="tab-pane fade" id="verify" role="tabpanel" aria-labelledby="verify-tab">
+                <div class="mb-3">
+                    <label for="verifyText" class="form-label">Dữ liệu gốc</label>
+                    <textarea id="verifyText" class="form-control" rows="3" placeholder="Nhập dữ liệu gốc"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="verifySignature" class="form-label">Chữ ký cần xác thực</label>
+                    <textarea id="verifySignature" class="form-control" rows="4" placeholder="Nhập chữ ký cần xác thực"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button id="btnVerify" class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Xác thực
+                    </button>
+                </div>
+                <div class="mb-3">
+                    <div id="verifyResult" class="alert d-none">
+                        <span id="verifyResultText"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Block Details Modal -->
 <div class="modal fade" id="blockDetailsModal" tabindex="-1" aria-labelledby="blockDetailsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -647,6 +759,139 @@ bao gồm cả trong phần HTML và JavaScript.
                     $("#errorModal").modal("show");
                 });
             });
+
+            // RSA Encryption Functions
+            // Mã hóa dữ liệu
+            $("#btnEncrypt").click(function() {
+                var text = $("#encryptText").val();
+                if (!text) {
+                    showAlert("Vui lòng nhập dữ liệu cần mã hóa", "warning");
+                    return;
+                }
+
+                $.ajax({
+                    url: "@Url.Action("Encrypt", "Home")",
+                    type: "POST",
+                    data: { text: text },
+                    success: function(response) {
+                        if (response.success) {
+                            $("#encryptResult").val(response.encryptedText);
+                        } else {
+                            showAlert(response.message, "danger");
+                        }
+                    },
+                    error: function() {
+                        showAlert("Lỗi khi thực hiện mã hóa", "danger");
+                    }
+                });
+            });
+
+            // Giải mã dữ liệu
+            $("#btnDecrypt").click(function() {
+                var encryptedText = $("#decryptText").val();
+                if (!encryptedText) {
+                    showAlert("Vui lòng nhập dữ liệu cần giải mã", "warning");
+                    return;
+                }
+
+                $.ajax({
+                    url: "@Url.Action("Decrypt", "Home")",
+                    type: "POST",
+                    data: { encryptedText: encryptedText },
+                    success: function(response) {
+                        if (response.success) {
+                            $("#decryptResult").val(response.decryptedText);
+                        } else {
+                            showAlert(response.message, "danger");
+                        }
+                    },
+                    error: function() {
+                        showAlert("Lỗi khi thực hiện giải mã", "danger");
+                    }
+                });
+            });
+
+            // Ký dữ liệu
+            $("#btnSign").click(function() {
+                var text = $("#signText").val();
+                if (!text) {
+                    showAlert("Vui lòng nhập dữ liệu cần ký", "warning");
+                    return;
+                }
+
+                $.ajax({
+                    url: "@Url.Action("Sign", "Home")",
+                    type: "POST",
+                    data: { text: text },
+                    success: function(response) {
+                        if (response.success) {
+                            $("#signResult").val(response.signature);
+                        } else {
+                            showAlert(response.message, "danger");
+                        }
+                    },
+                    error: function() {
+                        showAlert("Lỗi khi thực hiện ký dữ liệu", "danger");
+                    }
+                });
+            });
+
+            // Xác thực chữ ký
+            $("#btnVerify").click(function() {
+                var text = $("#verifyText").val();
+                var signature = $("#verifySignature").val();
+                
+                if (!text || !signature) {
+                    showAlert("Vui lòng nhập đầy đủ dữ liệu gốc và chữ ký", "warning");
+                    return;
+                }
+
+                $.ajax({
+                    url: "@Url.Action("VerifySignature", "Home")",
+                    type: "POST",
+                    data: { text: text, signature: signature },
+                    success: function(response) {
+                        if (response.success) {
+                            $("#verifyResult").removeClass("d-none alert-danger alert-success");
+                            if (response.isVerified) {
+                                $("#verifyResult").addClass("alert-success");
+                                $("#verifyResultText").html("<i class='bi bi-check-circle-fill'></i> Chữ ký hợp lệ! Dữ liệu chưa bị sửa đổi.");
+                            } else {
+                                $("#verifyResult").addClass("alert-danger");
+                                $("#verifyResultText").html("<i class='bi bi-x-circle-fill'></i> Chữ ký không hợp lệ! Dữ liệu có thể đã bị sửa đổi.");
+                            }
+                        } else {
+                            showAlert(response.message, "danger");
+                        }
+                    },
+                    error: function() {
+                        showAlert("Lỗi khi thực hiện xác thực chữ ký", "danger");
+                    }
+                });
+            });
+
+            // Hiển thị thông báo
+            function showAlert(message, type) {
+                $("#errorModalMessage").text(message);
+                $("#errorModal .modal-header").removeClass("bg-success bg-danger bg-warning");
+                $("#errorModal .modal-title i").removeClass("bi-check-circle-fill bi-exclamation-triangle-fill bi-info-circle-fill");
+                
+                if (type === "success") {
+                    $("#errorModal .modal-header").addClass("bg-success");
+                    $("#errorModal .modal-title i").addClass("bi-check-circle-fill");
+                    $("#errorModal .modal-title").text(" Thành công");
+                } else if (type === "danger") {
+                    $("#errorModal .modal-header").addClass("bg-danger");
+                    $("#errorModal .modal-title i").addClass("bi-exclamation-triangle-fill");
+                    $("#errorModal .modal-title").text(" Lỗi");
+                } else if (type === "warning") {
+                    $("#errorModal .modal-header").addClass("bg-warning");
+                    $("#errorModal .modal-title i").addClass("bi-info-circle-fill");
+                    $("#errorModal .modal-title").text(" Cảnh báo");
+                }
+                
+                $("#errorModal").modal("show");
+            }
         });
     </script>
 }
