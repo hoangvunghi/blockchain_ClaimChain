@@ -634,3 +634,5 @@ D:\learning\blockchain\quanlydiemkhongcoanh\blockchain_ClaimChain\obj\Debug\net9
 D:\learning\blockchain\quanlydiemkhongcoanh\blockchain_ClaimChain\obj\Debug\net9.0\Quanlydiem.pdb
 D:\learning\blockchain\quanlydiemkhongcoanh\blockchain_ClaimChain\obj\Debug\net9.0\Quanlydiem.genruntimeconfig.cache
 D:\learning\blockchain\quanlydiemkhongcoanh\blockchain_ClaimChain\obj\Debug\net9.0\ref\Quanlydiem.dll
+D:\learning\blockchain\quanlydiemkhongcoanh\blockchain_ClaimChain\obj\Debug\net9.0\compressed\wjs9f4dx31-jrhyi6fnjn.gz
+D:\learning\blockchain\quanlydiemkhongcoanh\blockchain_ClaimChain\obj\Debug\net9.0\compressed\hqjlg0oobr-wzu19ieuu4.gz

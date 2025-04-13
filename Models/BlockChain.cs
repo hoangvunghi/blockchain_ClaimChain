@@ -11,7 +11,7 @@ namespace Quanlydiem.Models
         public IBlock HeadBlock { get; private set; }
         public List<IBlock> Blocks { get; } = new List<IBlock>();
         private List<ITransaction> pendingTransactions = new List<ITransaction>();
-        private const int TRANSACTIONS_PER_BLOCK = 3;
+        private const int TRANSACTIONS_PER_BLOCK = 4;
         
         // Sự kiện để thông báo khi phát hiện block bị sửa đổi
         public event EventHandler<BlockIntegrityEventArgs> BlockIntegrityChanged;

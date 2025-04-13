@@ -756,6 +756,30 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1117"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 22 Mar 2025 13:53:53 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/privateKey.jrhyi6fnjn.xml">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\privateKey.xml'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jrhyi6fnjn"},{"Name":"integrity","Value":"sha256-kZcB/ugBrC6Butp2jKuj\u002BPl3h\u002BUl4YsJJHvgv8qdXDc="},{"Name":"label","Value":"_content/Quanlydiem/privateKey.xml"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1679"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022kZcB/ugBrC6Butp2jKuj\u002BPl3h\u002BUl4YsJJHvgv8qdXDc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:01:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/privateKey.xml">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\privateKey.xml'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kZcB/ugBrC6Butp2jKuj\u002BPl3h\u002BUl4YsJJHvgv8qdXDc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1679"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022kZcB/ugBrC6Butp2jKuj\u002BPl3h\u002BUl4YsJJHvgv8qdXDc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:01:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/publicKey.wzu19ieuu4.xml">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\publicKey.xml'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wzu19ieuu4"},{"Name":"integrity","Value":"sha256-LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8="},{"Name":"label","Value":"_content/Quanlydiem/publicKey.xml"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"415"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:01:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/publicKey.xml">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\publicKey.xml'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"415"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:01:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Quanlydiem/Quanlydiem.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Quanlydiem.k3drfz1e2j.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

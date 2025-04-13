@@ -92,11 +92,11 @@
                             <thead>
                                 <tr>
                                     <th>Vị trí</th>
-                                    <th>Mã sinh viên</th>
-                                    <th>Mã môn học</th>
-                                    <th>Điểm</th>
-                                    <th>Ngày lưu điểm</th>
-                                    <th>Lần thứ</th>
+                                    <th>Tổ chức cấp</th>
+                                    <th>Họ tên người nhận</th>
+                                    <th>Số căn cước</th>
+                                    <th>Ngày cấp</th>
+                                    <th>Loại tốt nghiệp</th>
                                     <th>Trạng thái</th>
                                 </tr>
                             </thead>
@@ -110,11 +110,11 @@
                                             var tx = transactions[i];
                                             <tr>
                                                 <td>@(i + 1)</td>
-                                                <td>@tx.masinhvien</td>
-                                                <td>@tx.mamonhoc</td>
-                                                <td>@tx.diem</td>
-                                                <td>@tx.ngayluudiem.ToString("dd/MM/yyyy HH:mm")</td>
-                                                <td>@tx.diemlanthu</td>
+                                                <td>@tx.tochuccap</td>
+                                                <td>@tx.hoten</td>
+                                                <td>@tx.socancuoc</td>
+                                                <td>@tx.ngaycap.ToString("dd/MM/yyyy HH:mm")</td>
+                                                <td>@tx.loaitotnghiep</td>
                                                 <td>
                                                     <span class="badge badge-warning">Không xác định</span>
                                                 </td>

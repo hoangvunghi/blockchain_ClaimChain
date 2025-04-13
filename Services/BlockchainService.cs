@@ -8,11 +8,11 @@ using System.Linq;
 /*
 HƯỚNG DẪN THAY ĐỔI THUỘC TÍNH:
 Trong file này, có 5 thuộc tính chính có thể được thay đổi:
-1. masinhvien/MaSinhVien: Hiện tại là "Mã sinh viên", có thể thay đổi thành thuộc tính khác
-2. mamonhoc/MaMonHoc: Hiện tại là "Mã môn học", có thể thay đổi thành thuộc tính khác
+1. tochuccap/tochuccap: Hiện tại là "Mã sinh viên", có thể thay đổi thành thuộc tính khác
+2. hoten/hoten: Hiện tại là "Mã môn học", có thể thay đổi thành thuộc tính khác
 3. diem/Diem: Hiện tại là "Điểm", có thể thay đổi thành thuộc tính khác
-4. ngayluudiem/NgayLuuDiem: Hiện tại là "Ngày lưu điểm", có thể thay đổi thành thuộc tính khác
-5. diemlanthu/DiemLanThu: Hiện tại là "Điểm lần thứ", có thể thay đổi thành thuộc tính khác
+4. ngaycap/ngaycap: Hiện tại là "Ngày lưu điểm", có thể thay đổi thành thuộc tính khác
+5. loaitotnghiep/loaitotnghiep: Hiện tại là "Điểm lần thứ", có thể thay đổi thành thuộc tính khác
 
 Các vị trí cần thay đổi:
 - Dòng 42-67: Tạo các transaction mẫu trong InitializeBlockchain
@@ -61,42 +61,55 @@ public class BlockchainService
             {
                 new Transaction
                 {
-                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                    masinhvien = "A45156",
-                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                    mamonhoc = "INT1001",
+                    // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                    tochuccap = "Thanglong Uni",
+                    // THUỘC TÍNH 2: Có thể thay đổi hoten
+                    hoten = "Vũ Nghị",
                     // THUỘC TÍNH 3: Có thể thay đổi diem
-                    diem = 8,
-                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                    ngayluudiem = DateTime.UtcNow,
-                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                    diemlanthu = 1
+                    socancuoc = "123456a",
+                    // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                    ngaycap = DateTime.UtcNow,
+                    // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                    loaitotnghiep = LoaiTotNghiep.XuatSac
                 },
                 new Transaction
                 {
-                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                    masinhvien = "A45157",
-                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                    mamonhoc = "INT1001",
+                    // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                    tochuccap = "Thanglong University",
+                    // THUỘC TÍNH 2: Có thể thay đổi hoten
+                    hoten = "Vũ Nghị",
                     // THUỘC TÍNH 3: Có thể thay đổi diem
-                    diem = 9,
-                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                    ngayluudiem = DateTime.UtcNow,
-                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                    diemlanthu = 1
+                    socancuoc = "123456aaaaaaaa",
+                    // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                    ngaycap = DateTime.UtcNow,
+                    // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                    loaitotnghiep = LoaiTotNghiep.Trungbinh
                 },
                 new Transaction
                 {
-                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                    masinhvien = "A45158",
-                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                    mamonhoc = "INT1001",
+                    // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                    tochuccap = "Thăng Long",
+                    // THUỘC TÍNH 2: Có thể thay đổi hoten
+                    hoten = "Hoàng Vũ Nghị",
                     // THUỘC TÍNH 3: Có thể thay đổi diem
-                    diem = 10,
-                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                    ngayluudiem = DateTime.UtcNow,
-                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                    diemlanthu = 1
+                    socancuoc = "a455555",
+                    // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                    ngaycap = DateTime.UtcNow,
+                    // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                    loaitotnghiep = LoaiTotNghiep.Gioi
+                },
+                new Transaction
+                {
+                    // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                    tochuccap = "Thanglong",
+                    // THUỘC TÍNH 2: Có thể thay đổi hoten
+                    hoten = "Hoàng Vũ Nghị",
+                    // THUỘC TÍNH 3: Có thể thay đổi diem
+                    socancuoc = "9666aa",
+                    // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                    ngaycap = DateTime.UtcNow,
+                    // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                    loaitotnghiep = LoaiTotNghiep.Kha
                 }
             };
 
@@ -121,16 +134,16 @@ public class BlockchainService
             {
                 blockModel.Transactions.Add(new TransactionModel
                 {
-                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                    masinhvien = transaction.masinhvien,
-                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                    mamonhoc = transaction.mamonhoc,
+                    // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                    tochuccap = transaction.tochuccap,
+                    // THUỘC TÍNH 2: Có thể thay đổi hoten
+                    hoten = transaction.hoten,
                     // THUỘC TÍNH 3: Có thể thay đổi diem
-                    diem = transaction.diem,
-                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                    ngayluudiem = transaction.ngayluudiem,
-                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                    diemlanthu = transaction.diemlanthu,
+                    socancuoc = transaction.socancuoc,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                    ngaycap = transaction.ngaycap,
+                    // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                    loaitotnghiep = transaction.loaitotnghiep,
                     TransactionHash = transaction.CalculateTransactionHash()
                 });
             }
@@ -178,16 +191,16 @@ public class BlockchainService
                 {
                     blockModel.Transactions.Add(new TransactionModel
                     {
-                        // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                        masinhvien = transaction.masinhvien,
-                        // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                        mamonhoc = transaction.mamonhoc,
+                        // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                        tochuccap = transaction.tochuccap,
+                        // THUỘC TÍNH 2: Có thể thay đổi hoten
+                        hoten = transaction.hoten,
                         // THUỘC TÍNH 3: Có thể thay đổi diem
-                        diem = transaction.diem,
-                        // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                        ngayluudiem = transaction.ngayluudiem,
-                        // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                        diemlanthu = transaction.diemlanthu,
+                        socancuoc = transaction.socancuoc,
+                        // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                        ngaycap = transaction.ngaycap,
+                        // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                        loaitotnghiep = transaction.loaitotnghiep,
                         TransactionHash = transaction.CalculateTransactionHash()
                     });
                 }
@@ -206,16 +219,16 @@ public class BlockchainService
                 {
                     var pendingTxn = new PendingTransactionModel
                     {
-                        // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                        masinhvien = transaction.masinhvien,
-                        // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                        mamonhoc = transaction.mamonhoc,
+                        // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                        tochuccap = transaction.tochuccap,
+                        // THUỘC TÍNH 2: Có thể thay đổi hoten
+                        hoten = transaction.hoten,
                         // THUỘC TÍNH 3: Có thể thay đổi diem
-                        diem = transaction.diem,
-                        // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                        ngayluudiem = transaction.ngayluudiem,
-                        // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                        diemlanthu = transaction.diemlanthu,
+                        socancuoc = transaction.socancuoc,
+                        // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                        ngaycap = transaction.ngaycap,
+                        // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                        loaitotnghiep = transaction.loaitotnghiep,
                         TransactionHash = transaction.CalculateTransactionHash()
                     };
                     _context.PendingTransactions.Add(pendingTxn);
@@ -256,16 +269,16 @@ public class BlockchainService
             {
                 block.AddTransaction(new Transaction
                 {
-                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                    masinhvien = transactionModel.masinhvien,
-                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                    mamonhoc = transactionModel.mamonhoc,
+                    // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                    tochuccap = transactionModel.tochuccap,
+                    // THUỘC TÍNH 2: Có thể thay đổi hoten
+                    hoten = transactionModel.hoten,
                     // THUỘC TÍNH 3: Có thể thay đổi diem
-                    diem = transactionModel.diem,
-                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                    ngayluudiem = transactionModel.ngayluudiem,
-                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                    diemlanthu = transactionModel.diemlanthu
+                    socancuoc = transactionModel.socancuoc,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                    ngaycap = transactionModel.ngaycap,
+                    // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                    loaitotnghiep = transactionModel.loaitotnghiep
                 });
             }
 
@@ -285,16 +298,16 @@ public class BlockchainService
         {
             Blockchain.AddTransaction(new Transaction
             {
-                // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                masinhvien = txn.masinhvien,
-                // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                mamonhoc = txn.mamonhoc,
+                // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                tochuccap = txn.tochuccap,
+                // THUỘC TÍNH 2: Có thể thay đổi hoten
+                hoten = txn.hoten,
                 // THUỘC TÍNH 3: Có thể thay đổi diem
-                diem = txn.diem,
-                // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                ngayluudiem = txn.ngayluudiem,
-                // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                diemlanthu = txn.diemlanthu
+                socancuoc = txn.socancuoc,
+                // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                ngaycap = txn.ngaycap,
+                // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                loaitotnghiep = txn.loaitotnghiep
             });
         }
     }
@@ -346,16 +359,16 @@ public class BlockchainService
                 {
                     tempBlock.AddTransaction(new Transaction
                     {
-                        // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                        masinhvien = txn.masinhvien,
-                        // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                        mamonhoc = txn.mamonhoc,
+                        // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                        tochuccap = txn.tochuccap,
+                        // THUỘC TÍNH 2: Có thể thay đổi hoten
+                        hoten = txn.hoten,
                         // THUỘC TÍNH 3: Có thể thay đổi diem
-                        diem = txn.diem,
-                        // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                        ngayluudiem = txn.ngayluudiem,
-                        // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                        diemlanthu = txn.diemlanthu
+                        socancuoc = txn.socancuoc,
+                        // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                        ngaycap = txn.ngaycap,
+                        // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                        loaitotnghiep = txn.loaitotnghiep
                     });
                 }
 
@@ -380,7 +393,7 @@ public class BlockchainService
     }
 
     // THUỘC TÍNH 1-5: Tham số của hàm EditTransaction có thể thay đổi
-    public bool EditTransaction(int blockNumber, int transactionId, string masinhvien, string mamonhoc, int diem, DateTime ngayluudiem, int diemlanthu)
+    public bool EditTransaction(int blockNumber, int transactionId, string tochuccap, string hoten, string socancuoc, DateTime ngaycap, LoaiTotNghiep loaitotnghiep)
     {
         try
         {
@@ -413,16 +426,16 @@ public class BlockchainService
             {
                 tempBlock.AddTransaction(new Transaction
                 {
-                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                    masinhvien = txn.masinhvien,
-                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                    mamonhoc = txn.mamonhoc,
+                    // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                    tochuccap = txn.tochuccap,
+                    // THUỘC TÍNH 2: Có thể thay đổi hoten
+                    hoten = txn.hoten,
                     // THUỘC TÍNH 3: Có thể thay đổi diem
-                    diem = txn.diem,
-                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                    ngayluudiem = txn.ngayluudiem,
-                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                    diemlanthu = txn.diemlanthu
+                    socancuoc = txn.socancuoc,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                    ngaycap = txn.ngaycap,
+                    // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                    loaitotnghiep = txn.loaitotnghiep
                 });
             }
 
@@ -436,28 +449,28 @@ public class BlockchainService
             }
 
             // Nếu Merkle Root khớp, tiến hành sửa đổi
-            // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-            transaction.masinhvien = masinhvien;
-            // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-            transaction.mamonhoc = mamonhoc;
+            // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+            transaction.tochuccap = tochuccap;
+            // THUỘC TÍNH 2: Có thể thay đổi hoten
+            transaction.hoten = hoten;
             // THUỘC TÍNH 3: Có thể thay đổi diem
-            transaction.diem = diem;
-            // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-            transaction.ngayluudiem = ngayluudiem;
-            // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-            transaction.diemlanthu = diemlanthu;
+            transaction.socancuoc = socancuoc;
+            // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+            transaction.ngaycap = ngaycap;
+            // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+            transaction.loaitotnghiep = loaitotnghiep;
             transaction.TransactionHash = new Transaction
             {
-                // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                masinhvien = masinhvien,
-                // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                mamonhoc = mamonhoc,
+                // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                tochuccap = tochuccap,
+                // THUỘC TÍNH 2: Có thể thay đổi hoten
+                hoten = hoten,
                 // THUỘC TÍNH 3: Có thể thay đổi diem
-                diem = diem,
-                // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                ngayluudiem = ngayluudiem,
-                // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                diemlanthu = diemlanthu
+                socancuoc = socancuoc,
+                // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                ngaycap = ngaycap,
+                // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                loaitotnghiep = loaitotnghiep
             }.CalculateTransactionHash();
 
             // Tính toán lại Merkle Root sau khi sửa đổi
@@ -472,16 +485,16 @@ public class BlockchainService
             {
                 updatedTempBlock.AddTransaction(new Transaction
                 {
-                    // THUỘC TÍNH 1: Có thể thay đổi masinhvien
-                    masinhvien = txn.masinhvien,
-                    // THUỘC TÍNH 2: Có thể thay đổi mamonhoc
-                    mamonhoc = txn.mamonhoc,
+                    // THUỘC TÍNH 1: Có thể thay đổi tochuccap
+                    tochuccap = txn.tochuccap,
+                    // THUỘC TÍNH 2: Có thể thay đổi hoten
+                    hoten = txn.hoten,
                     // THUỘC TÍNH 3: Có thể thay đổi diem
-                    diem = txn.diem,
-                    // THUỘC TÍNH 4: Có thể thay đổi ngayluudiem
-                    ngayluudiem = txn.ngayluudiem,
-                    // THUỘC TÍNH 5: Có thể thay đổi diemlanthu
-                    diemlanthu = txn.diemlanthu
+                    socancuoc = txn.socancuoc,
+                    // THUỘC TÍNH 4: Có thể thay đổi ngaycap
+                    ngaycap = txn.ngaycap,
+                    // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
+                    loaitotnghiep = txn.loaitotnghiep
                 });
             }
 

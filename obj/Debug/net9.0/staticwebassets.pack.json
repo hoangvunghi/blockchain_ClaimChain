@@ -257,6 +257,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
+      "Id": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\privateKey.xml",
+      "PackagePath": "staticwebassets\\privateKey.xml"
+    },
+    {
+      "Id": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\publicKey.xml",
+      "PackagePath": "staticwebassets\\publicKey.xml"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Quanlydiem.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

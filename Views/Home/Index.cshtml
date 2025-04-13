@@ -3,10 +3,10 @@
 <!-- 
 HƯỚNG DẪN THAY ĐỔI THUỘC TÍNH:
 Trong file này, có 5 thuộc tính chính có thể được thay đổi:
-1. masinhvien/MaSinhVien: Hiện tại là "Mã sinh viên", có thể thay đổi thành thuộc tính khác
-2. mamonhoc/MaMonHoc: Hiện tại là "Mã môn học", có thể thay đổi thành thuộc tính khác
+1. tochuccap/tochuccap: Hiện tại là "Mã sinh viên", có thể thay đổi thành thuộc tính khác
+2. hoten/hoten: Hiện tại là "Mã môn học", có thể thay đổi thành thuộc tính khác
 3. diem/Diem: Hiện tại là "Điểm", có thể thay đổi thành thuộc tính khác
-4. ngayluudiem/NgayLuuDiem: Hiện tại là "Ngày lưu điểm", có thể thay đổi thành thuộc tính khác
+4. ngaycap/ngaycap: Hiện tại là "Ngày cấp", có thể thay đổi thành thuộc tính khác
 5. diemlanthu/DiemLanThu: Hiện tại là "Điểm lần thứ", có thể thay đổi thành thuộc tính khác
 
 Các vị trí cần thay đổi đã được đánh dấu bằng chú thích "THUỘC TÍNH X" trong file.
@@ -20,7 +20,7 @@ bao gồm cả trong phần HTML và JavaScript.
         <h1 class="display-4 fw-bold text-gradient">Blockchain Demo</h1>
         @* <p class="lead text-muted">A simple demonstration
          of blockchain technology with transactions and blocks</p> *@
-        <p class="lead text-muted">Chương trình quản lý điểm của sinh viên</p>
+        <p class="lead text-muted">Chương trình quản lý bằng tốt nghiệp</p>
     </div>
 
     <!-- Success Message -->
@@ -60,7 +60,7 @@ bao gồm cả trong phần HTML và JavaScript.
                     <h5 class="card-title">
                         <i class="bi bi-clock-history"></i> Pending Transactions
                     </h5>
-                    <p class="display-4 mb-0">@Model.PendingTransactions.Count / 3</p>
+                    <p class="display-4 mb-0">@Model.PendingTransactions.Count / 4</p>
                 </div>
             </div>
         </div>
@@ -95,21 +95,21 @@ bao gồm cả trong phần HTML và JavaScript.
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <!-- THUỘC TÍNH 1: Có thể thay đổi "Mã sinh viên" và "masinhvien" -->
-                            <label for="masinhvien" class="form-label">Mã sinh viên</label>
-                            <input type="text" class="form-control" id="masinhvien" name="masinhvien" required>
+                            <!-- THUỘC TÍNH 1: Có thể thay đổi "Mã sinh viên" và "tochuccap" -->
+                            <label for="tochuccap" class="form-label">Tổ chức cấp</label>
+                            <input type="text" class="form-control" id="tochuccap" name="tochuccap" required>
                             <div class="invalid-feedback">
-                                Vui lòng nhập mã sinh viên.
+                                Vui lòng nhập tổ chức cấp
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <!-- THUỘC TÍNH 2: Có thể thay đổi "Mã môn học" và "mamonhoc" -->
-                            <label for="mamonhoc" class="form-label">Mã môn học</label>
-                            <input type="text" class="form-control" id="mamonhoc" name="mamonhoc" required>
+                            <!-- THUỘC TÍNH 2: Có thể thay đổi "Mã môn học" và "hoten" -->
+                            <label for="hoten" class="form-label">Họ tên người nhận</label>
+                            <input type="text" class="form-control" id="hoten" name="hoten" required>
                             <div class="invalid-feedback">
-                                Vui lòng nhập mã môn học.
+                                Vui lòng nhập họ tên người nhận
                             </div>
                         </div>
                     </div>
@@ -118,30 +118,32 @@ bao gồm cả trong phần HTML và JavaScript.
                     <div class="col-md-4">
                         <div class="form-group">
                             <!-- THUỘC TÍNH 3: Có thể thay đổi "Điểm" và "diem" -->
-                            <label for="diem" class="form-label">Điểm</label>
-                            <input type="number" class="form-control" id="diem" name="diem" min="0" max="10" required>
+                            <label for="socancuoc" class="form-label">Số căn cước</label>
+                            <input type="text" class="form-control" id="socancuoc" name="socancuoc" required>
                             <div class="invalid-feedback">
-                                Vui lòng nhập điểm từ 0-10.
+                                Vui lòng nhập số căn cước.
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <!-- THUỘC TÍNH 4: Có thể thay đổi "Ngày lưu điểm" và "ngayluudiem" -->
-                            <label for="ngayluudiem" class="form-label">Ngày lưu điểm</label>
-                            <input type="datetime-local" class="form-control" id="ngayluudiem" name="ngayluudiem" required>
+                            <!-- THUỘC TÍNH 4: Có thể thay đổi "Ngày cấp" và "ngaycap" -->
+                            <label for="ngaycap" class="form-label">Ngày cấp</label>
+                            <input type="datetime-local" class="form-control" id="ngaycap" name="ngaycap" required>
                             <div class="invalid-feedback">
-                                Vui lòng chọn ngày lưu điểm.
+                                Vui lòng chọn ngày cấp.
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <!-- THUỘC TÍNH 5: Có thể thay đổi "Điểm lần thứ" và "diemlanthu" -->
-                            <label for="diemlanthu" class="form-label">Điểm lần thứ</label>
-                            <input type="number" class="form-control" id="diemlanthu" name="diemlanthu" min="1" max="10" value="1" required>
+                            <label for="loaitotnghiep" class="form-label">Loại tốt nghiệp</label>
+                            <select id="loaitotnghiep" name="loaitotnghiep" class="form-select rounded-3" asp-items="Html.GetEnumSelectList<Quanlydiem.Interfaces.LoaiTotNghiep>()" required>
+                            <option value="">-- Chọn loại tốt nghiệp --</option>
+                        </select>
                             <div class="invalid-feedback">
-                                Vui lòng nhập lần thi từ 1-10.
+                                Vui lòng chọn loại tốt nghiệp.
                             </div>
                         </div>
                     </div>
@@ -187,16 +189,16 @@ bao gồm cả trong phần HTML và JavaScript.
                                 data-merkle-root="@block.MerkleRoot"
                                 data-transactions="@Html.Raw(System.Text.Json.JsonSerializer.Serialize(block.Transactions.Select((t, i) => new { 
                                     id = i + 1, 
-                                    /* THUỘC TÍNH 1: Có thể thay đổi masinhvien */
-                                    masinhvien = t.masinhvien, 
-                                    /* THUỘC TÍNH 2: Có thể thay đổi mamonhoc */
-                                    mamonhoc = t.mamonhoc, 
+                                    /* THUỘC TÍNH 1: Có thể thay đổi tochuccap */
+                                    tochuccap = t.tochuccap, 
+                                    /* THUỘC TÍNH 2: Có thể thay đổi hoten */
+                                    hoten = t.hoten, 
                                     /* THUỘC TÍNH 3: Có thể thay đổi diem */
-                                    diem = t.diem, 
-                                    /* THUỘC TÍNH 4: Có thể thay đổi ngayluudiem */
-                                    ngayluudiem = t.ngayluudiem,
+                                    socancuoc = t.socancuoc, 
+                                    /* THUỘC TÍNH 4: Có thể thay đổi ngaycap */
+                                    ngaycap = t.ngaycap,
                                     /* THUỘC TÍNH 5: Có thể thay đổi diemlanthu */
-                                    diemlanthu = t.diemlanthu
+                                    loaitotnghiep = t.loaitotnghiep
                                 })))">
                                 <td>@block.BlockNumber</td>
                                 <td>@block.CreatedDate.ToString("dd/MM/yyyy HH:mm:ss")</td>
@@ -247,16 +249,16 @@ bao gồm cả trong phần HTML và JavaScript.
                                                     <thead>
                                                         <tr>
                                                             <th>#</th>
-                                                            <!-- THUỘC TÍNH 1: Có thể thay đổi "Mã SV" -->
-                                                            <th>Mã SV</th>
-                                                            <!-- THUỘC TÍNH 2: Có thể thay đổi "Mã MH" -->
-                                                            <th>Mã MH</th>
+                                                            <!-- THUỘC TÍNH 1: Có thể thay đổi "Tổ chức cấp" -->
+                                                            <th>Tổ chức cấp</th>
+                                                            <!-- THUỘC TÍNH 2: Có thể thay đổi "Họ và tên" -->
+                                                            <th>Họ và tên</th>
                                                             <!-- THUỘC TÍNH 3: Có thể thay đổi "Điểm" -->
-                                                            <th>Điểm</th>
+                                                            <th>Số căn cước</th>
                                                             <!-- THUỘC TÍNH 4: Có thể thay đổi "Ngày lưu" -->
-                                                            <th>Ngày lưu</th>
+                                                            <th>Ngày cấp</th>
                                                             <!-- THUỘC TÍNH 5: Có thể thay đổi "Lần thứ" -->
-                                                            <th>Lần thứ</th>
+                                                            <th>Loại tốt nghiệp</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -266,16 +268,16 @@ bao gồm cả trong phần HTML và JavaScript.
                                                             var transactionId = i + 1;
                                                             <tr>
                                                                 <td>@transactionId</td>
-                                                                <!-- THUỘC TÍNH 1: Có thể thay đổi transaction.masinhvien -->
-                                                                <td>@transaction.masinhvien</td>
-                                                                <!-- THUỘC TÍNH 2: Có thể thay đổi transaction.mamonhoc -->
-                                                                <td>@transaction.mamonhoc</td>
+                                                                <!-- THUỘC TÍNH 1: Có thể thay đổi transaction.tochuccap -->
+                                                                <td>@transaction.tochuccap</td>
+                                                                <!-- THUỘC TÍNH 2: Có thể thay đổi transaction.hoten -->
+                                                                <td>@transaction.hoten</td>
                                                                 <!-- THUỘC TÍNH 3: Có thể thay đổi transaction.diem -->
-                                                                <td>@transaction.diem</td>
-                                                                <!-- THUỘC TÍNH 4: Có thể thay đổi transaction.ngayluudiem -->
-                                                                <td>@transaction.ngayluudiem.ToString("dd/MM/yyyy HH:mm")</td>
+                                                                <td>@transaction.socancuoc</td>
+                                                                <!-- THUỘC TÍNH 4: Có thể thay đổi transaction.ngaycap -->
+                                                                <td>@transaction.ngaycap.ToString("dd/MM/yyyy HH:mm")</td>
                                                                 <!-- THUỘC TÍNH 5: Có thể thay đổi transaction.diemlanthu -->
-                                                                <td>@transaction.diemlanthu</td>
+                                                                <td>@transaction.loaitotnghiep</td>
                                                             </tr>
                                                         }
                                                     </tbody>
@@ -307,16 +309,16 @@ bao gồm cả trong phần HTML và JavaScript.
                         <thead class="table-light">
                             <tr>
                                 <th>#</th>
-                                <!-- THUỘC TÍNH 1: Có thể thay đổi "Mã SV" -->
-                                <th>Mã SV</th>
-                                <!-- THUỘC TÍNH 2: Có thể thay đổi "Mã MH" -->
-                                <th>Mã MH</th>
+                                <!-- THUỘC TÍNH 1: Có thể thay đổi "Tổ chức cấp" -->
+                                <th>Tổ chức cấp</th>
+                                <!-- THUỘC TÍNH 2: Có thể thay đổi "Họ và tên" -->
+                                <th>Họ và tên</th>
                                 <!-- THUỘC TÍNH 3: Có thể thay đổi "Điểm" -->
-                                <th>Điểm</th>
+                                <th>Số căn cước</th>
                                 <!-- THUỘC TÍNH 4: Có thể thay đổi "Ngày lưu" -->
-                                <th>Ngày lưu</th>
+                                <th>Ngày cấp</th>
                                 <!-- THUỘC TÍNH 5: Có thể thay đổi "Lần thứ" -->
-                                <th>Lần thứ</th>
+                                <th>Loại tốt nghiệp</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -325,23 +327,23 @@ bao gồm cả trong phần HTML và JavaScript.
                                 var transaction = Model.PendingTransactions[i];
                                 <tr>
                                     <td>@(i + 1)</td>
-                                    <!-- THUỘC TÍNH 1: Có thể thay đổi transaction.masinhvien -->
-                                    <td>@transaction.masinhvien</td>
-                                    <!-- THUỘC TÍNH 2: Có thể thay đổi transaction.mamonhoc -->
-                                    <td>@transaction.mamonhoc</td>
+                                    <!-- THUỘC TÍNH 1: Có thể thay đổi transaction.tochuccap -->
+                                    <td>@transaction.tochuccap</td>
+                                    <!-- THUỘC TÍNH 2: Có thể thay đổi transaction.hoten -->
+                                    <td>@transaction.hoten</td>
                                     <!-- THUỘC TÍNH 3: Có thể thay đổi transaction.diem -->
-                                    <td>@transaction.diem</td>
-                                    <!-- THUỘC TÍNH 4: Có thể thay đổi transaction.ngayluudiem -->
-                                    <td>@transaction.ngayluudiem.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@transaction.socancuoc</td>
+                                    <!-- THUỘC TÍNH 4: Có thể thay đổi transaction.ngaycap -->
+                                    <td>@transaction.ngaycap.ToString("dd/MM/yyyy HH:mm")</td>
                                     <!-- THUỘC TÍNH 5: Có thể thay đổi transaction.diemlanthu -->
-                                    <td>@transaction.diemlanthu</td>
+                                    <td>@transaction.loaitotnghiep</td>
                                 </tr>
                             }
                         </tbody>
                     </table>
                 </div>
                 <div class="alert alert-info mt-3">
-                    <i class="bi bi-info-circle"></i> Pending transactions will be added to a new block once there are 3 transactions.
+                    <i class="bi bi-info-circle"></i> Pending transactions will be added to a new block once there are 4 transactions.
                 </div>
             }
             else
@@ -355,116 +357,6 @@ bao gồm cả trong phần HTML và JavaScript.
 </div>
 
 <!-- RSA Encryption Section -->
-<div class="card shadow-sm mb-5">
-    <div class="card-header bg-info text-white">
-        <h3 class="card-title mb-0">
-            <i class="bi bi-shield-lock"></i> Mã hóa và Chữ ký RSA
-        </h3>
-    </div>
-    <div class="card-body">
-        <div class="row mb-4">
-            <div class="col-md-12 text-center mb-3">
-                <a asp-action="GenerateKeys" class="btn btn-primary">
-                    <i class="bi bi-key"></i> Tạo cặp khóa mới
-                </a>
-            </div>
-            <div class="col-md-12">
-                <div class="alert alert-info">
-                    <i class="bi bi-info-circle"></i> Sử dụng mã hóa RSA để bảo vệ dữ liệu và xác thực chữ ký số. Tạo cặp khóa trước khi sử dụng các chức năng khác.
-                </div>
-            </div>
-        </div>
-
-        <ul class="nav nav-tabs" id="cryptoTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="encrypt-tab" data-bs-toggle="tab" data-bs-target="#encrypt" type="button" role="tab" aria-controls="encrypt" aria-selected="true">Mã hóa</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="decrypt-tab" data-bs-toggle="tab" data-bs-target="#decrypt" type="button" role="tab" aria-controls="decrypt" aria-selected="false">Giải mã</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="sign-tab" data-bs-toggle="tab" data-bs-target="#sign" type="button" role="tab" aria-controls="sign" aria-selected="false">Ký dữ liệu</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="verify-tab" data-bs-toggle="tab" data-bs-target="#verify" type="button" role="tab" aria-controls="verify" aria-selected="false">Xác thực chữ ký</button>
-            </li>
-        </ul>
-        <div class="tab-content p-3 border border-top-0 rounded-bottom" id="cryptoTabsContent">
-            <!-- Mã hóa Tab -->
-            <div class="tab-pane fade show active" id="encrypt" role="tabpanel" aria-labelledby="encrypt-tab">
-                <div class="mb-3">
-                    <label for="encryptText" class="form-label">Dữ liệu cần mã hóa</label>
-                    <textarea id="encryptText" class="form-control" rows="3" placeholder="Nhập dữ liệu cần mã hóa"></textarea>
-                </div>
-                <div class="mb-3">
-                    <button id="btnEncrypt" class="btn btn-primary">
-                        <i class="bi bi-lock"></i> Mã hóa
-                    </button>
-                </div>
-                <div class="mb-3">
-                    <label for="encryptResult" class="form-label">Kết quả mã hóa</label>
-                    <textarea id="encryptResult" class="form-control" rows="4" readonly></textarea>
-                </div>
-            </div>
-            
-            <!-- Giải mã Tab -->
-            <div class="tab-pane fade" id="decrypt" role="tabpanel" aria-labelledby="decrypt-tab">
-                <div class="mb-3">
-                    <label for="decryptText" class="form-label">Dữ liệu cần giải mã</label>
-                    <textarea id="decryptText" class="form-control" rows="4" placeholder="Nhập dữ liệu đã mã hóa"></textarea>
-                </div>
-                <div class="mb-3">
-                    <button id="btnDecrypt" class="btn btn-success">
-                        <i class="bi bi-unlock"></i> Giải mã
-                    </button>
-                </div>
-                <div class="mb-3">
-                    <label for="decryptResult" class="form-label">Kết quả giải mã</label>
-                    <textarea id="decryptResult" class="form-control" rows="3" readonly></textarea>
-                </div>
-            </div>
-            
-            <!-- Ký dữ liệu Tab -->
-            <div class="tab-pane fade" id="sign" role="tabpanel" aria-labelledby="sign-tab">
-                <div class="mb-3">
-                    <label for="signText" class="form-label">Dữ liệu cần ký</label>
-                    <textarea id="signText" class="form-control" rows="3" placeholder="Nhập dữ liệu cần ký"></textarea>
-                </div>
-                <div class="mb-3">
-                    <button id="btnSign" class="btn btn-primary">
-                        <i class="bi bi-pen"></i> Ký dữ liệu
-                    </button>
-                </div>
-                <div class="mb-3">
-                    <label for="signResult" class="form-label">Chữ ký</label>
-                    <textarea id="signResult" class="form-control" rows="4" readonly></textarea>
-                </div>
-            </div>
-            
-            <!-- Xác thực chữ ký Tab -->
-            <div class="tab-pane fade" id="verify" role="tabpanel" aria-labelledby="verify-tab">
-                <div class="mb-3">
-                    <label for="verifyText" class="form-label">Dữ liệu gốc</label>
-                    <textarea id="verifyText" class="form-control" rows="3" placeholder="Nhập dữ liệu gốc"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="verifySignature" class="form-label">Chữ ký cần xác thực</label>
-                    <textarea id="verifySignature" class="form-control" rows="4" placeholder="Nhập chữ ký cần xác thực"></textarea>
-                </div>
-                <div class="mb-3">
-                    <button id="btnVerify" class="btn btn-success">
-                        <i class="bi bi-check-circle"></i> Xác thực
-                    </button>
-                </div>
-                <div class="mb-3">
-                    <div id="verifyResult" class="alert d-none">
-                        <span id="verifyResultText"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Block Details Modal -->
 <div class="modal fade" id="blockDetailsModal" tabindex="-1" aria-labelledby="blockDetailsModalLabel" aria-hidden="true">
@@ -729,15 +621,15 @@ bao gồm cả trong phần HTML và JavaScript.
                         var txnHtml = `
                             <div class="list-group-item">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <!-- THUỘC TÍNH 1: Có thể thay đổi "Sinh viên" và txn.masinhvien -->
-                                    <h5 class="mb-1">Sinh viên: ${txn.masinhvien}</h5>
-                                    <!-- THUỘC TÍNH 2: Có thể thay đổi "Môn học" và txn.mamonhoc -->
-                                    <small>Môn học: ${txn.mamonhoc}</small>
+                                    <!-- THUỘC TÍNH 1: Có thể thay đổi "Sinh viên" và txn.tochuccap -->
+                                    <h5 class="mb-1">Sinh viên: ${txn.tochuccap}</h5>
+                                    <!-- THUỘC TÍNH 2: Có thể thay đổi "Môn học" và txn.hoten -->
+                                    <small>Môn học: ${txn.hoten}</small>
                                 </div>
                                 <!-- THUỘC TÍNH 3: Có thể thay đổi "Điểm" và txn.diem -->
-                                <p class="mb-1">Điểm: ${txn.diem}</p>
-                                <!-- THUỘC TÍNH 4 và 5: Có thể thay đổi "Ngày lưu", "Lần thứ", txn.ngayluudiem và txn.diemlanthu -->
-                                <small>Ngày lưu: ${new Date(txn.ngayluudiem).toLocaleString()} | Lần thứ: ${txn.diemlanthu}</small>
+                                <p class="mb-1">Số căn cước: ${txn.socancuoc}</p>
+                                <!-- THUỘC TÍNH 4 và 5: Có thể thay đổi "Ngày lưu", "Lần thứ", txn.ngaycap và txn.diemlanthu -->
+                                <small>Ngày lưu: ${new Date(txn.ngaycap).toLocaleString()} | Lần thứ: ${txn.loaitotnghiep}</small>
                             </div>
                         `;
                         $("#modalTransactions").append(txnHtml);
