@@ -1146,8 +1146,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jrhyi6fnjn</Fingerprint>
-      <Integrity>kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc=</Integrity>
+      <Fingerprint>a3d7c43mn6</Fingerprint>
+      <Integrity>Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\privateKey.xml'))</OriginalItemSpec>
@@ -1164,8 +1164,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wzu19ieuu4</Fingerprint>
-      <Integrity>LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=</Integrity>
+      <Fingerprint>blntsvrs58</Fingerprint>
+      <Integrity>r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\publicKey.xml'))</OriginalItemSpec>
@@ -1187,6 +1187,96 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Quanlydiem.k3drfz1e2j.bundle.scp.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Quanlydiem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Quanlydiem</BasePath>
+      <RelativePath>temp/243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>c9dfm4ep7k</Fingerprint>
+      <Integrity>IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\Checklist biểu mẫu y tế_encrypted.bin'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Quanlydiem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Quanlydiem</BasePath>
+      <RelativePath>temp/Checklist biểu mẫu y tế_encrypted.bin</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zydu92y12w</Fingerprint>
+      <Integrity>O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\Checklist biểu mẫu y tế_encrypted.bin'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\Checklist biểu mẫu y tế_encrypted_decrypted.bin'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Quanlydiem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Quanlydiem</BasePath>
+      <RelativePath>temp/Checklist biểu mẫu y tế_encrypted_decrypted.bin</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>pwm055hdrr</Fingerprint>
+      <Integrity>+Rz2CGgYCYFHiQxr1TDfj+BAuOuMQwPdG0hzfcpfWXA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\Checklist biểu mẫu y tế_encrypted_decrypted.bin'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\OIP.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Quanlydiem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Quanlydiem</BasePath>
+      <RelativePath>temp/OIP.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>onj0x64sps</Fingerprint>
+      <Integrity>fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\OIP.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\OIP_encrypted.bin'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Quanlydiem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Quanlydiem</BasePath>
+      <RelativePath>temp/OIP_encrypted.bin</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>qfpppxlsla</Fingerprint>
+      <Integrity>+oXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\OIP_encrypted.bin'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

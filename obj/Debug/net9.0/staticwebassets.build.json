@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8C8n+9B6KeCtd20VVW3YdnvJmkeyNQlfm8JIfhdJjbE=",
+  "Hash": "vn9NIL5HZIetfQUIFq99JGa5CceM4qTl3Rc7hHCDYig=",
   "Source": "Quanlydiem",
   "BasePath": "_content/Quanlydiem",
   "Mode": "Default",
@@ -752,12 +752,12 @@
       "OriginalItemSpec": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-wzu19ieuu4.gz",
+      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-blntsvrs58.gz",
       "SourceId": "Quanlydiem",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Quanlydiem",
-      "RelativePath": "publicKey#[.{fingerprint=wzu19ieuu4}]?.xml.gz",
+      "RelativePath": "publicKey#[.{fingerprint=blntsvrs58}]?.xml.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -766,8 +766,8 @@
       "RelatedAsset": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\publicKey.xml",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ee1z425mm5",
-      "Integrity": "KnIcffqyEiOyezhELmPqJeqP5+UX3KY/rDeQN6wneL8=",
+      "Fingerprint": "48mhewyxe6",
+      "Integrity": "xDiEhTTq8TZYoxE7uHZcEy5R1iNT7VFuWs3lVjte6l8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\publicKey.xml"
@@ -1235,12 +1235,12 @@
       "OriginalItemSpec": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-jrhyi6fnjn.gz",
+      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-a3d7c43mn6.gz",
       "SourceId": "Quanlydiem",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Quanlydiem",
-      "RelativePath": "privateKey#[.{fingerprint=jrhyi6fnjn}]?.xml.gz",
+      "RelativePath": "privateKey#[.{fingerprint=a3d7c43mn6}]?.xml.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1249,8 +1249,8 @@
       "RelatedAsset": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\privateKey.xml",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "et88fo69oy",
-      "Integrity": "XrKv/sjl1YjsxaS5FZmitSUIS1K83/UsgIekN3mIM14=",
+      "Fingerprint": "okvltoypn3",
+      "Integrity": "GJCd6Efph1BSHfkK305ey/3tThjs8LIAJn5ybEnTQ8c=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\privateKey.xml"
@@ -2782,8 +2782,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jrhyi6fnjn",
-      "Integrity": "kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc=",
+      "Fingerprint": "a3d7c43mn6",
+      "Integrity": "Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\privateKey.xml"
@@ -2803,11 +2803,116 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "wzu19ieuu4",
-      "Integrity": "LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=",
+      "Fingerprint": "blntsvrs58",
+      "Integrity": "r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\publicKey.xml"
+    },
+    {
+      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin",
+      "SourceId": "Quanlydiem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\",
+      "BasePath": "_content/Quanlydiem",
+      "RelativePath": "temp/243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted#[.{fingerprint}]?.bin",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c9dfm4ep7k",
+      "Integrity": "IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\temp\\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin"
+    },
+    {
+      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted_decrypted.bin",
+      "SourceId": "Quanlydiem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\",
+      "BasePath": "_content/Quanlydiem",
+      "RelativePath": "temp/Checklist biểu mẫu y tế_encrypted_decrypted#[.{fingerprint}]?.bin",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pwm055hdrr",
+      "Integrity": "+Rz2CGgYCYFHiQxr1TDfj+BAuOuMQwPdG0hzfcpfWXA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted_decrypted.bin"
+    },
+    {
+      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted.bin",
+      "SourceId": "Quanlydiem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\",
+      "BasePath": "_content/Quanlydiem",
+      "RelativePath": "temp/Checklist biểu mẫu y tế_encrypted#[.{fingerprint}]?.bin",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zydu92y12w",
+      "Integrity": "O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted.bin"
+    },
+    {
+      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\OIP_encrypted.bin",
+      "SourceId": "Quanlydiem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\",
+      "BasePath": "_content/Quanlydiem",
+      "RelativePath": "temp/OIP_encrypted#[.{fingerprint}]?.bin",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qfpppxlsla",
+      "Integrity": "+oXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\temp\\OIP_encrypted.bin"
+    },
+    {
+      "Identity": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\OIP.jpg",
+      "SourceId": "Quanlydiem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\",
+      "BasePath": "_content/Quanlydiem",
+      "RelativePath": "temp/OIP#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "onj0x64sps",
+      "Integrity": "fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\temp\\OIP.jpg"
     }
   ],
   "Endpoints": [
@@ -21370,13 +21475,13 @@
       ]
     },
     {
-      "Route": "privateKey.jrhyi6fnjn.xml",
-      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-jrhyi6fnjn.gz",
+      "Route": "privateKey.a3d7c43mn6.xml",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-a3d7c43mn6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000766871166"
+          "Quality": "0.000765696784"
         }
       ],
       "ResponseHeaders": [
@@ -21386,15 +21491,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1303"
+          "Value": "1305"
         },
         {
           "Name": "ETag",
-          "Value": "\"XrKv/sjl1YjsxaS5FZmitSUIS1K83/UsgIekN3mIM14=\""
+          "Value": "\"GJCd6Efph1BSHfkK305ey/3tThjs8LIAJn5ybEnTQ8c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21414,13 +21519,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc=\""
+          "Value": "W/\"Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jrhyi6fnjn"
+          "Value": "a3d7c43mn6"
         },
         {
           "Name": "label",
@@ -21428,12 +21533,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc="
+          "Value": "sha256-Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM="
         }
       ]
     },
     {
-      "Route": "privateKey.jrhyi6fnjn.xml",
+      "Route": "privateKey.a3d7c43mn6.xml",
       "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\privateKey.xml",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21451,11 +21556,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc=\""
+          "Value": "\"Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21465,7 +21570,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jrhyi6fnjn"
+          "Value": "a3d7c43mn6"
         },
         {
           "Name": "label",
@@ -21473,13 +21578,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc="
+          "Value": "sha256-Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM="
         }
       ]
     },
     {
-      "Route": "privateKey.jrhyi6fnjn.xml.gz",
-      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-jrhyi6fnjn.gz",
+      "Route": "privateKey.a3d7c43mn6.xml.gz",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-a3d7c43mn6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21488,7 +21593,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1303"
+          "Value": "1305"
         },
         {
           "Name": "Content-Type",
@@ -21496,11 +21601,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XrKv/sjl1YjsxaS5FZmitSUIS1K83/UsgIekN3mIM14=\""
+          "Value": "\"GJCd6Efph1BSHfkK305ey/3tThjs8LIAJn5ybEnTQ8c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21518,7 +21623,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jrhyi6fnjn"
+          "Value": "a3d7c43mn6"
         },
         {
           "Name": "label",
@@ -21526,18 +21631,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XrKv/sjl1YjsxaS5FZmitSUIS1K83/UsgIekN3mIM14="
+          "Value": "sha256-GJCd6Efph1BSHfkK305ey/3tThjs8LIAJn5ybEnTQ8c="
         }
       ]
     },
     {
       "Route": "privateKey.xml",
-      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-jrhyi6fnjn.gz",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-a3d7c43mn6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000766871166"
+          "Quality": "0.000765696784"
         }
       ],
       "ResponseHeaders": [
@@ -21547,15 +21652,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1303"
+          "Value": "1305"
         },
         {
           "Name": "ETag",
-          "Value": "\"XrKv/sjl1YjsxaS5FZmitSUIS1K83/UsgIekN3mIM14=\""
+          "Value": "\"GJCd6Efph1BSHfkK305ey/3tThjs8LIAJn5ybEnTQ8c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21575,13 +21680,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc=\""
+          "Value": "W/\"Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc="
+          "Value": "sha256-Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM="
         }
       ]
     },
@@ -21604,11 +21709,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc=\""
+          "Value": "\"Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21618,13 +21723,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kZcB/ugBrC6Butp2jKuj+Pl3h+Ul4YsJJHvgv8qdXDc="
+          "Value": "sha256-Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM="
         }
       ]
     },
     {
       "Route": "privateKey.xml.gz",
-      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-jrhyi6fnjn.gz",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\wjs9f4dx31-a3d7c43mn6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21633,7 +21738,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1303"
+          "Value": "1305"
         },
         {
           "Name": "Content-Type",
@@ -21641,11 +21746,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XrKv/sjl1YjsxaS5FZmitSUIS1K83/UsgIekN3mIM14=\""
+          "Value": "\"GJCd6Efph1BSHfkK305ey/3tThjs8LIAJn5ybEnTQ8c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21663,18 +21768,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-XrKv/sjl1YjsxaS5FZmitSUIS1K83/UsgIekN3mIM14="
+          "Value": "sha256-GJCd6Efph1BSHfkK305ey/3tThjs8LIAJn5ybEnTQ8c="
         }
       ]
     },
     {
-      "Route": "publicKey.wzu19ieuu4.xml",
-      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-wzu19ieuu4.gz",
+      "Route": "publicKey.blntsvrs58.xml",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-blntsvrs58.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002816901408"
+          "Quality": "0.002808988764"
         }
       ],
       "ResponseHeaders": [
@@ -21684,15 +21789,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "354"
+          "Value": "355"
         },
         {
           "Name": "ETag",
-          "Value": "\"KnIcffqyEiOyezhELmPqJeqP5+UX3KY/rDeQN6wneL8=\""
+          "Value": "\"xDiEhTTq8TZYoxE7uHZcEy5R1iNT7VFuWs3lVjte6l8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21712,13 +21817,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=\""
+          "Value": "W/\"r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wzu19ieuu4"
+          "Value": "blntsvrs58"
         },
         {
           "Name": "label",
@@ -21726,12 +21831,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8="
+          "Value": "sha256-r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU="
         }
       ]
     },
     {
-      "Route": "publicKey.wzu19ieuu4.xml",
+      "Route": "publicKey.blntsvrs58.xml",
       "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\publicKey.xml",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21749,11 +21854,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=\""
+          "Value": "\"r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21763,7 +21868,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wzu19ieuu4"
+          "Value": "blntsvrs58"
         },
         {
           "Name": "label",
@@ -21771,13 +21876,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8="
+          "Value": "sha256-r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU="
         }
       ]
     },
     {
-      "Route": "publicKey.wzu19ieuu4.xml.gz",
-      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-wzu19ieuu4.gz",
+      "Route": "publicKey.blntsvrs58.xml.gz",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-blntsvrs58.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21786,7 +21891,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "354"
+          "Value": "355"
         },
         {
           "Name": "Content-Type",
@@ -21794,11 +21899,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KnIcffqyEiOyezhELmPqJeqP5+UX3KY/rDeQN6wneL8=\""
+          "Value": "\"xDiEhTTq8TZYoxE7uHZcEy5R1iNT7VFuWs3lVjte6l8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21816,7 +21921,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wzu19ieuu4"
+          "Value": "blntsvrs58"
         },
         {
           "Name": "label",
@@ -21824,18 +21929,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-KnIcffqyEiOyezhELmPqJeqP5+UX3KY/rDeQN6wneL8="
+          "Value": "sha256-xDiEhTTq8TZYoxE7uHZcEy5R1iNT7VFuWs3lVjte6l8="
         }
       ]
     },
     {
       "Route": "publicKey.xml",
-      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-wzu19ieuu4.gz",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-blntsvrs58.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002816901408"
+          "Quality": "0.002808988764"
         }
       ],
       "ResponseHeaders": [
@@ -21845,15 +21950,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "354"
+          "Value": "355"
         },
         {
           "Name": "ETag",
-          "Value": "\"KnIcffqyEiOyezhELmPqJeqP5+UX3KY/rDeQN6wneL8=\""
+          "Value": "\"xDiEhTTq8TZYoxE7uHZcEy5R1iNT7VFuWs3lVjte6l8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21873,13 +21978,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=\""
+          "Value": "W/\"r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8="
+          "Value": "sha256-r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU="
         }
       ]
     },
@@ -21902,11 +22007,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=\""
+          "Value": "\"r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21916,13 +22021,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8="
+          "Value": "sha256-r0QHCjTmTQROMxWp+/XvKudJUvZHN/lGzmrGOGQwUgU="
         }
       ]
     },
     {
       "Route": "publicKey.xml.gz",
-      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-wzu19ieuu4.gz",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\obj\\Debug\\net9.0\\compressed\\hqjlg0oobr-blntsvrs58.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21931,7 +22036,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "354"
+          "Value": "355"
         },
         {
           "Name": "Content-Type",
@@ -21939,11 +22044,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KnIcffqyEiOyezhELmPqJeqP5+UX3KY/rDeQN6wneL8=\""
+          "Value": "\"xDiEhTTq8TZYoxE7uHZcEy5R1iNT7VFuWs3lVjte6l8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 04:01:33 GMT"
+          "Value": "Sun, 13 Apr 2025 02:57:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21961,7 +22066,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KnIcffqyEiOyezhELmPqJeqP5+UX3KY/rDeQN6wneL8="
+          "Value": "sha256-xDiEhTTq8TZYoxE7uHZcEy5R1iNT7VFuWs3lVjte6l8="
         }
       ]
     },
@@ -22558,6 +22663,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-NxIT8yzThMj+2kTPGdzBU6ywHrUyiNJcJQ0T0PzZ450="
+        }
+      ]
+    },
+    {
+      "Route": "temp/243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32256"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 08:59:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA="
+        }
+      ]
+    },
+    {
+      "Route": "temp/243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.c9dfm4ep7k.bin",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32256"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 08:59:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c9dfm4ep7k"
+        },
+        {
+          "Name": "label",
+          "Value": "temp/243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA="
+        }
+      ]
+    },
+    {
+      "Route": "temp/Checklist biểu mẫu y tế_encrypted_decrypted.bin",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted_decrypted.bin",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10852"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+Rz2CGgYCYFHiQxr1TDfj+BAuOuMQwPdG0hzfcpfWXA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 09:05:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+Rz2CGgYCYFHiQxr1TDfj+BAuOuMQwPdG0hzfcpfWXA="
+        }
+      ]
+    },
+    {
+      "Route": "temp/Checklist biểu mẫu y tế_encrypted_decrypted.pwm055hdrr.bin",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted_decrypted.bin",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10852"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+Rz2CGgYCYFHiQxr1TDfj+BAuOuMQwPdG0hzfcpfWXA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 09:05:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pwm055hdrr"
+        },
+        {
+          "Name": "label",
+          "Value": "temp/Checklist biểu mẫu y tế_encrypted_decrypted.bin"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+Rz2CGgYCYFHiQxr1TDfj+BAuOuMQwPdG0hzfcpfWXA="
+        }
+      ]
+    },
+    {
+      "Route": "temp/Checklist biểu mẫu y tế_encrypted.bin",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted.bin",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13056"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 09:04:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk="
+        }
+      ]
+    },
+    {
+      "Route": "temp/Checklist biểu mẫu y tế_encrypted.zydu92y12w.bin",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted.bin",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13056"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 09:04:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zydu92y12w"
+        },
+        {
+          "Name": "label",
+          "Value": "temp/Checklist biểu mẫu y tế_encrypted.bin"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk="
+        }
+      ]
+    },
+    {
+      "Route": "temp/OIP_encrypted.bin",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\OIP_encrypted.bin",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7168"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+oXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 09:15:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+oXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk="
+        }
+      ]
+    },
+    {
+      "Route": "temp/OIP_encrypted.qfpppxlsla.bin",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\OIP_encrypted.bin",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7168"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+oXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 09:15:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qfpppxlsla"
+        },
+        {
+          "Name": "label",
+          "Value": "temp/OIP_encrypted.bin"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+oXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk="
+        }
+      ]
+    },
+    {
+      "Route": "temp/OIP.jpg",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\OIP.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5780"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 09:15:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI="
+        }
+      ]
+    },
+    {
+      "Route": "temp/OIP.onj0x64sps.jpg",
+      "AssetFile": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\OIP.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5780"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 09:15:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "onj0x64sps"
+        },
+        {
+          "Name": "label",
+          "Value": "temp/OIP.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI="
         }
       ]
     }

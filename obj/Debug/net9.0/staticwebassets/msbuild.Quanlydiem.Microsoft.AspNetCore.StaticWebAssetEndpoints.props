@@ -756,29 +756,29 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1117"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 22 Mar 2025 13:53:53 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Quanlydiem/privateKey.jrhyi6fnjn.xml">
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/privateKey.a3d7c43mn6.xml">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\privateKey.xml'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jrhyi6fnjn"},{"Name":"integrity","Value":"sha256-kZcB/ugBrC6Butp2jKuj\u002BPl3h\u002BUl4YsJJHvgv8qdXDc="},{"Name":"label","Value":"_content/Quanlydiem/privateKey.xml"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1679"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022kZcB/ugBrC6Butp2jKuj\u002BPl3h\u002BUl4YsJJHvgv8qdXDc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:01:33 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"a3d7c43mn6"},{"Name":"integrity","Value":"sha256-Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM="},{"Name":"label","Value":"_content/Quanlydiem/privateKey.xml"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1679"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 02:57:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Quanlydiem/privateKey.xml">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\privateKey.xml'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kZcB/ugBrC6Butp2jKuj\u002BPl3h\u002BUl4YsJJHvgv8qdXDc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1679"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022kZcB/ugBrC6Butp2jKuj\u002BPl3h\u002BUl4YsJJHvgv8qdXDc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:01:33 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1679"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022Bgr5MiJXrJcutvzJW/x5whyqU9TJFEXNGYtDcFMNYOM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 02:57:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Quanlydiem/publicKey.wzu19ieuu4.xml">
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/publicKey.blntsvrs58.xml">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\publicKey.xml'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wzu19ieuu4"},{"Name":"integrity","Value":"sha256-LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8="},{"Name":"label","Value":"_content/Quanlydiem/publicKey.xml"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"415"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:01:33 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"blntsvrs58"},{"Name":"integrity","Value":"sha256-r0QHCjTmTQROMxWp\u002B/XvKudJUvZHN/lGzmrGOGQwUgU="},{"Name":"label","Value":"_content/Quanlydiem/publicKey.xml"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"415"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022r0QHCjTmTQROMxWp\u002B/XvKudJUvZHN/lGzmrGOGQwUgU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 02:57:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Quanlydiem/publicKey.xml">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\publicKey.xml'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"415"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022LOTzE/ZTXeZ2mXLaDCpwUkPUDUUavGvPzOGejzcHRb8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 24 Mar 2025 04:01:33 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-r0QHCjTmTQROMxWp\u002B/XvKudJUvZHN/lGzmrGOGQwUgU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"415"},{"Name":"Content-Type","Value":"text/xml"},{"Name":"ETag","Value":"\u0022r0QHCjTmTQROMxWp\u002B/XvKudJUvZHN/lGzmrGOGQwUgU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 02:57:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Quanlydiem/Quanlydiem.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Quanlydiem.k3drfz1e2j.bundle.scp.css'))</AssetFile>
@@ -791,6 +791,66 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"k3drfz1e2j"},{"Name":"integrity","Value":"sha256-8BkT5XNY8/Xf0SK7oNReFBhRe\u002BNtj6XSyZjJKgA3UiA="},{"Name":"label","Value":"_content/Quanlydiem/Quanlydiem.bundle.scp.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00228BkT5XNY8/Xf0SK7oNReFBhRe\u002BNtj6XSyZjJKgA3UiA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 22 Mar 2025 13:53:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"32256"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 08:59:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.c9dfm4ep7k.bin">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"c9dfm4ep7k"},{"Name":"integrity","Value":"sha256-IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA="},{"Name":"label","Value":"_content/Quanlydiem/temp/243_CS223_02 (L\u1EADp tr\u00ECnh Java) - DiemGiuaKy_encrypted.bin"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"32256"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022IIkYSIj0at7P5uUUfqOfivvJy2Xhz2Z7/QLzTy6t2rA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 08:59:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/Checklist biểu mẫu y tế_encrypted.bin">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\Checklist biểu mẫu y tế_encrypted.bin'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"13056"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 09:04:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/Checklist biểu mẫu y tế_encrypted.zydu92y12w.bin">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\Checklist biểu mẫu y tế_encrypted.bin'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zydu92y12w"},{"Name":"integrity","Value":"sha256-O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk="},{"Name":"label","Value":"_content/Quanlydiem/temp/Checklist bi\u1EC3u m\u1EABu y t\u1EBF_encrypted.bin"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"13056"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022O/PBJoNoq4MzGDzUPsIDleAv5OgMv4lMkion1O8Hekk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 09:04:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/Checklist biểu mẫu y tế_encrypted_decrypted.bin">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\Checklist biểu mẫu y tế_encrypted_decrypted.bin'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-\u002BRz2CGgYCYFHiQxr1TDfj\u002BBAuOuMQwPdG0hzfcpfWXA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"10852"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022\u002BRz2CGgYCYFHiQxr1TDfj\u002BBAuOuMQwPdG0hzfcpfWXA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 09:05:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/Checklist biểu mẫu y tế_encrypted_decrypted.pwm055hdrr.bin">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\Checklist biểu mẫu y tế_encrypted_decrypted.bin'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pwm055hdrr"},{"Name":"integrity","Value":"sha256-\u002BRz2CGgYCYFHiQxr1TDfj\u002BBAuOuMQwPdG0hzfcpfWXA="},{"Name":"label","Value":"_content/Quanlydiem/temp/Checklist bi\u1EC3u m\u1EABu y t\u1EBF_encrypted_decrypted.bin"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10852"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022\u002BRz2CGgYCYFHiQxr1TDfj\u002BBAuOuMQwPdG0hzfcpfWXA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 09:05:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/OIP.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\OIP.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5780"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 09:15:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/OIP.onj0x64sps.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\OIP.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"onj0x64sps"},{"Name":"integrity","Value":"sha256-fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI="},{"Name":"label","Value":"_content/Quanlydiem/temp/OIP.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5780"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022fMMNJQruGhyDkgKjOyjtawz/l7etgqVVTzk3rmWEsAI=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 09:15:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/OIP_encrypted.bin">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\OIP_encrypted.bin'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-\u002BoXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7168"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022\u002BoXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 09:15:04 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Quanlydiem/temp/OIP_encrypted.qfpppxlsla.bin">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\temp\OIP_encrypted.bin'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qfpppxlsla"},{"Name":"integrity","Value":"sha256-\u002BoXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk="},{"Name":"label","Value":"_content/Quanlydiem/temp/OIP_encrypted.bin"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7168"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022\u002BoXV0nwI4gCV3RQN/gvJMmqN1k9WSuHK1UMRTtLFkKk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Apr 2025 09:15:04 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

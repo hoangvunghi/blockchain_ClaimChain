@@ -1,0 +1,466 @@
+@{
+    ViewData["Title"] = "Mã hóa File";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Mã hóa File RSA</h2>
+    <div class="alert alert-info">
+        <i class="fas fa-info-circle"></i> Lưu ý: RSA chỉ có thể mã hóa các file nhỏ (tối đa 100KB) do giới hạn về kích thước khóa.
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Mã hóa File</h5>
+                </div>
+                <div class="card-body">
+                    <form id="encryptForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="encryptFile">Chọn file cần mã hóa:</label>
+                            <input type="file" id="encryptFile" name="file" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="publicKeyInput">Khóa công khai (không bắt buộc):</label>
+                            <div class="input-group">
+                                <textarea id="publicKeyInput" name="publicKey" class="form-control" rows="3" placeholder="Nhập khóa công khai hoặc để trống để sử dụng khóa hệ thống"></textarea>
+                                <button class="btn btn-secondary" type="button" id="loadPublicKey">
+                                    <i class="fas fa-download"></i> Tải khóa
+                                </button>
+                            </div>
+                            <small class="form-text text-muted">Để trống để sử dụng khóa hệ thống.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Mã hóa</button>
+                    </form>
+                    <div id="encryptStatus" class="mt-3"></div>
+                    <div id="encryptResult" class="mt-3" style="display:none">
+                        <h6>File đã mã hóa:</h6>
+                        <div class="d-flex align-items-center mb-2">
+                            <span id="encryptedFileName" class="me-2"></span>
+                            <a id="encryptedFileLink" href="#" class="btn btn-success btn-sm">
+                                <i class="fas fa-download"></i> Tải xuống
+                            </a>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label>File gốc: <span id="originalFileName" class="text-info"></span></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="fileHash">Mã hash SHA-256 của file gốc:</label>
+                            <div class="input-group">
+                                <input type="text" id="fileHash" class="form-control" readonly>
+                                <button class="btn btn-secondary" type="button" id="copyHash">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <small class="form-text text-muted">Lưu mã hash này để xác thực file sau khi giải mã.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Giải mã File</h5>
+                </div>
+                <div class="card-body">
+                    <form id="decryptForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="decryptFile">Chọn file cần giải mã:</label>
+                            <input type="file" id="decryptFile" name="file" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="privateKeyInput">Khóa riêng tư (không bắt buộc):</label>
+                            <div class="input-group">
+                                <textarea id="privateKeyInput" name="privateKey" class="form-control" rows="3" placeholder="Nhập khóa riêng tư hoặc để trống để sử dụng khóa hệ thống"></textarea>
+                                <button class="btn btn-secondary" type="button" id="loadPrivateKey">
+                                    <i class="fas fa-download"></i> Tải khóa
+                                </button>
+                            </div>
+                            <small class="form-text text-muted">Để trống để sử dụng khóa hệ thống.</small>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="decryptHash">Mã hash SHA-256 của file gốc (không bắt buộc):</label>
+                            <input type="text" id="decryptHash" name="fileHash" class="form-control" placeholder="Nhập mã hash để xác thực tính toàn vẹn">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Giải mã</button>
+                    </form>
+                    <div id="decryptStatus" class="mt-3"></div>
+                    <div id="decryptResult" class="mt-3" style="display:none">
+                        <h6>File đã giải mã:</h6>
+                        <div class="d-flex align-items-center">
+                            <span id="decryptedFileName" class="me-2"></span>
+                            <a id="decryptedFileLink" href="#" class="btn btn-success btn-sm">
+                                <i class="fas fa-download"></i> Tải xuống
+                            </a>
+                        </div>
+                        <div id="hashVerification" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Ký File</h5>
+                </div>
+                <div class="card-body">
+                    <form id="signForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="signFile">Chọn file cần ký:</label>
+                            <input type="file" id="signFile" name="file" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="signPrivateKeyInput">Khóa riêng tư (không bắt buộc):</label>
+                            <div class="input-group">
+                                <textarea id="signPrivateKeyInput" name="privateKey" class="form-control" rows="3" placeholder="Nhập khóa riêng tư hoặc để trống để sử dụng khóa hệ thống"></textarea>
+                                <button class="btn btn-secondary" type="button" id="loadSignPrivateKey">
+                                    <i class="fas fa-download"></i> Tải khóa
+                                </button>
+                            </div>
+                            <small class="form-text text-muted">Để trống để sử dụng khóa hệ thống.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Ký file</button>
+                    </form>
+                    <div id="signStatus" class="mt-3"></div>
+                    <div id="signResult" class="mt-3" style="display:none">
+                        <div class="form-group">
+                            <label for="fileSignature">Chữ ký (Base64):</label>
+                            <textarea id="fileSignature" class="form-control" rows="5" readonly></textarea>
+                            <button id="copySignature" class="btn btn-secondary btn-sm mt-2">
+                                <i class="fas fa-copy"></i> Sao chép
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Xác thực chữ ký File</h5>
+                </div>
+                <div class="card-body">
+                    <form id="verifyForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="verifyFile">Chọn file cần xác thực:</label>
+                            <input type="file" id="verifyFile" name="file" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="verifySignature">Nhập chữ ký (Base64):</label>
+                            <textarea id="verifySignature" name="signature" class="form-control" rows="5"></textarea>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="verifyPublicKeyInput">Khóa công khai (không bắt buộc):</label>
+                            <div class="input-group">
+                                <textarea id="verifyPublicKeyInput" name="publicKey" class="form-control" rows="3" placeholder="Nhập khóa công khai hoặc để trống để sử dụng khóa hệ thống"></textarea>
+                                <button class="btn btn-secondary" type="button" id="loadVerifyPublicKey">
+                                    <i class="fas fa-download"></i> Tải khóa
+                                </button>
+                            </div>
+                            <small class="form-text text-muted">Để trống để sử dụng khóa hệ thống.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Xác thực</button>
+                    </form>
+                    <div id="verifyStatus" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Tải khóa công khai từ hệ thống
+            $("#loadPublicKey").click(function() {
+                $.ajax({
+                    url: '@Url.Action("GetPublicKey", "FileEncryption")',
+                    type: 'GET',
+                    success: function(result) {
+                        if (result.success) {
+                            $("#publicKeyInput").val(result.publicKey);
+                        } else {
+                            alert(result.message);
+                        }
+                    },
+                    error: function() {
+                        alert("Đã xảy ra lỗi khi tải khóa công khai!");
+                    }
+                });
+            });
+            
+            // Tải khóa riêng tư từ hệ thống
+            $("#loadPrivateKey").click(function() {
+                $.ajax({
+                    url: '@Url.Action("GetPrivateKey", "FileEncryption")',
+                    type: 'GET',
+                    success: function(result) {
+                        if (result.success) {
+                            $("#privateKeyInput").val(result.privateKey);
+                        } else {
+                            alert(result.message);
+                        }
+                    },
+                    error: function() {
+                        alert("Đã xảy ra lỗi khi tải khóa riêng tư!");
+                    }
+                });
+            });
+
+            // Tải khóa riêng tư từ hệ thống cho chức năng ký
+            $("#loadSignPrivateKey").click(function() {
+                $.ajax({
+                    url: '@Url.Action("GetPrivateKey", "FileEncryption")',
+                    type: 'GET',
+                    success: function(result) {
+                        if (result.success) {
+                            $("#signPrivateKeyInput").val(result.privateKey);
+                        } else {
+                            alert(result.message);
+                        }
+                    },
+                    error: function() {
+                        alert("Đã xảy ra lỗi khi tải khóa riêng tư!");
+                    }
+                });
+            });
+            
+            // Tải khóa công khai từ hệ thống cho chức năng xác thực
+            $("#loadVerifyPublicKey").click(function() {
+                $.ajax({
+                    url: '@Url.Action("GetPublicKey", "FileEncryption")',
+                    type: 'GET',
+                    success: function(result) {
+                        if (result.success) {
+                            $("#verifyPublicKeyInput").val(result.publicKey);
+                        } else {
+                            alert(result.message);
+                        }
+                    },
+                    error: function() {
+                        alert("Đã xảy ra lỗi khi tải khóa công khai!");
+                    }
+                });
+            });
+
+            // Mã hóa file
+            $("#encryptForm").submit(function (e) {
+                e.preventDefault();
+                var fileInput = $("#encryptFile")[0];
+                if (fileInput.files.length === 0) {
+                    alert("Vui lòng chọn file để mã hóa!");
+                    return;
+                }
+
+                var formData = new FormData();
+                formData.append("file", fileInput.files[0]);
+                
+                // Thêm khóa công khai nếu có
+                var publicKey = $("#publicKeyInput").val();
+                if (publicKey) {
+                    formData.append("publicKey", publicKey);
+                }
+
+                $("#encryptStatus").html('<div class="alert alert-info">Đang mã hóa file...</div>');
+                $("#encryptResult").hide();
+
+                $.ajax({
+                    url: '@Url.Action("EncryptFile", "FileEncryption")',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        if (result.success) {
+                            $("#encryptStatus").html('<div class="alert alert-success">File đã được mã hóa thành công!</div>');
+                            $("#encryptedFileName").text(result.fileName);
+                            $("#encryptedFileLink").attr("href", result.fileUrl);
+                            $("#fileHash").val(result.fileHash);
+                            
+                            // Hiển thị thông tin file gốc
+                            var originalName = $("#encryptFile")[0].files[0].name;
+                            $("#originalFileName").text(originalName);
+                            
+                            $("#encryptResult").show();
+                        } else {
+                            $("#encryptStatus").html('<div class="alert alert-danger">' + result.message + '</div>');
+                        }
+                    },
+                    error: function () {
+                        $("#encryptStatus").html('<div class="alert alert-danger">Đã xảy ra lỗi khi mã hóa file!</div>');
+                    }
+                });
+            });
+
+            // Sao chép mã hash
+            $("#copyHash").click(function () {
+                var hashInput = $("#fileHash");
+                hashInput.select();
+                document.execCommand("copy");
+                alert("Đã sao chép mã hash!");
+            });
+
+            // Giải mã file
+            $("#decryptForm").submit(function (e) {
+                e.preventDefault();
+                var fileInput = $("#decryptFile")[0];
+                var fileHash = $("#decryptHash").val();
+                
+                if (fileInput.files.length === 0) {
+                    alert("Vui lòng chọn file để giải mã!");
+                    return;
+                }
+
+                var formData = new FormData();
+                formData.append("file", fileInput.files[0]);
+                
+                // Thêm khóa riêng tư nếu có
+                var privateKey = $("#privateKeyInput").val();
+                if (privateKey) {
+                    formData.append("privateKey", privateKey);
+                }
+                
+                // Thêm mã hash nếu có
+                if (fileHash) {
+                    formData.append("fileHash", fileHash);
+                }
+
+                $("#decryptStatus").html('<div class="alert alert-info">Đang giải mã file...</div>');
+                $("#decryptResult").hide();
+
+                $.ajax({
+                    url: '@Url.Action("DecryptFile", "FileEncryption")',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        if (result.success) {
+                            $("#decryptStatus").html('<div class="alert alert-success">File đã được giải mã thành công!</div>');
+                            $("#decryptedFileName").text(result.fileName);
+                            $("#decryptedFileLink").attr("href", result.fileUrl);
+                            
+                            // Hiển thị kết quả xác thực hash nếu có
+                            if (result.hashVerified !== null) {
+                                if (result.hashVerified === true) {
+                                    $("#hashVerification").html('<div class="alert alert-success"><i class="fas fa-check-circle"></i> Xác thực hash thành công! File không bị thay đổi.</div>');
+                                } else {
+                                    $("#hashVerification").html('<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> Cảnh báo: Hash không khớp! File có thể đã bị thay đổi.</div>');
+                                }
+                            } else {
+                                $("#hashVerification").html('');
+                            }
+                            
+                            $("#decryptResult").show();
+                        } else {
+                            $("#decryptStatus").html('<div class="alert alert-danger">' + result.message + '</div>');
+                        }
+                    },
+                    error: function () {
+                        $("#decryptStatus").html('<div class="alert alert-danger">Đã xảy ra lỗi khi giải mã file!</div>');
+                    }
+                });
+            });
+
+            // Ký file
+            $("#signForm").submit(function (e) {
+                e.preventDefault();
+                var fileInput = $("#signFile")[0];
+                if (fileInput.files.length === 0) {
+                    alert("Vui lòng chọn file để ký!");
+                    return;
+                }
+
+                var formData = new FormData();
+                formData.append("file", fileInput.files[0]);
+                
+                // Thêm khóa riêng tư nếu có
+                var privateKey = $("#signPrivateKeyInput").val();
+                if (privateKey) {
+                    formData.append("privateKey", privateKey);
+                }
+
+                $("#signStatus").html('<div class="alert alert-info">Đang ký file...</div>');
+                $("#signResult").hide();
+
+                $.ajax({
+                    url: '@Url.Action("SignFile", "FileEncryption")',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        if (result.success) {
+                            $("#signStatus").html('<div class="alert alert-success">File đã được ký thành công!</div>');
+                            $("#fileSignature").val(result.signature);
+                            $("#signResult").show();
+                        } else {
+                            $("#signStatus").html('<div class="alert alert-danger">' + result.message + '</div>');
+                        }
+                    },
+                    error: function () {
+                        $("#signStatus").html('<div class="alert alert-danger">Đã xảy ra lỗi khi ký file!</div>');
+                    }
+                });
+            });
+
+            // Sao chép chữ ký
+            $("#copySignature").click(function () {
+                var signatureText = $("#fileSignature");
+                signatureText.select();
+                document.execCommand("copy");
+                alert("Đã sao chép chữ ký!");
+            });
+
+            // Xác thực chữ ký file
+            $("#verifyForm").submit(function (e) {
+                e.preventDefault();
+                var fileInput = $("#verifyFile")[0];
+                var signature = $("#verifySignature").val();
+                
+                if (fileInput.files.length === 0 || !signature) {
+                    alert("Vui lòng chọn file và nhập chữ ký để xác thực!");
+                    return;
+                }
+
+                var formData = new FormData();
+                formData.append("file", fileInput.files[0]);
+                formData.append("signature", signature);
+                
+                // Thêm khóa công khai nếu có
+                var publicKey = $("#verifyPublicKeyInput").val();
+                if (publicKey) {
+                    formData.append("publicKey", publicKey);
+                }
+
+                $("#verifyStatus").html('<div class="alert alert-info">Đang xác thực chữ ký...</div>');
+
+                $.ajax({
+                    url: '@Url.Action("VerifyFileSignature", "FileEncryption")',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        if (result.success) {
+                            if (result.isVerified) {
+                                $("#verifyStatus").html('<div class="alert alert-success">Xác thực thành công! Chữ ký hợp lệ.</div>');
+                            } else {
+                                $("#verifyStatus").html('<div class="alert alert-danger">Xác thực thất bại! Chữ ký không hợp lệ.</div>');
+                            }
+                        } else {
+                            $("#verifyStatus").html('<div class="alert alert-danger">' + result.message + '</div>');
+                        }
+                    },
+                    error: function () {
+                        $("#verifyStatus").html('<div class="alert alert-danger">Đã xảy ra lỗi khi xác thực chữ ký file!</div>');
+                    }
+                });
+            });
+        });
+    </script>
+} 

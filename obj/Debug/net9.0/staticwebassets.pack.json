@@ -265,6 +265,26 @@
       "PackagePath": "staticwebassets\\publicKey.xml"
     },
     {
+      "Id": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin",
+      "PackagePath": "staticwebassets\\temp\\243_CS223_02 (Lập trình Java) - DiemGiuaKy_encrypted.bin"
+    },
+    {
+      "Id": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted.bin",
+      "PackagePath": "staticwebassets\\temp\\Checklist biểu mẫu y tế_encrypted.bin"
+    },
+    {
+      "Id": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\Checklist biểu mẫu y tế_encrypted_decrypted.bin",
+      "PackagePath": "staticwebassets\\temp\\Checklist biểu mẫu y tế_encrypted_decrypted.bin"
+    },
+    {
+      "Id": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\OIP.jpg",
+      "PackagePath": "staticwebassets\\temp\\OIP.jpg"
+    },
+    {
+      "Id": "D:\\learning\\blockchain\\quanlydiemkhongcoanh\\blockchain_ClaimChain\\wwwroot\\temp\\OIP_encrypted.bin",
+      "PackagePath": "staticwebassets\\temp\\OIP_encrypted.bin"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Quanlydiem.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
