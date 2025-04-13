@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Quanlydiem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9377ec4d7e58a8d5402010601a5ebc9e527c4dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad83fa046d71afbf32e1b3a63cceb8ca0dfccb07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Quanlydiem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Quanlydiem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
