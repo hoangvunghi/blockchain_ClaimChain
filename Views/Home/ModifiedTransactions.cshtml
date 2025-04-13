@@ -1,0 +1,117 @@
+@model List<Quanlydiem.Services.ModifiedTransactionInfo>
+
+@{
+    ViewData["Title"] = "Transactions Đã Sửa Đổi";
+}
+
+<div class="container mt-5">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-gradient">Danh Sách Transaction Đã Sửa Đổi</h1>
+        <p class="lead text-muted">Các transaction có nội dung không khớp với hash ban đầu</p>
+    </div>
+    
+    <div class="card shadow-sm mb-5">
+        <div class="card-header bg-danger text-white">
+            <h3 class="card-title mb-0">
+                <i class="bi bi-exclamation-triangle"></i> Transactions Đã Sửa Đổi
+            </h3>
+        </div>
+        <div class="card-body">
+            @if (Model.Count == 0)
+            {
+                <div class="alert alert-success" role="alert">
+                    <i class="bi bi-check-circle-fill"></i> Không phát hiện transaction nào bị sửa đổi. Blockchain vẫn nguyên vẹn!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> Phát hiện <strong>@Model.Count</strong> transaction đã bị sửa đổi!
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Block #</th>
+                                <th>Transaction #</th>
+                                <th>Tổ chức cấp</th>
+                                <th>Họ tên</th>
+                                <th>Số căn cước</th>
+                                <th>Ngày cấp</th>
+                                <th>Loại tốt nghiệp</th>
+                                <th>Hash Gốc</th>
+                                <th>Hash Hiện Tại</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="table-danger">
+                                    <td>@item.BlockNumber</td>
+                                    <td>@item.TransactionId</td>
+                                    <td>@item.ToChucCap</td>
+                                    <td>@item.HoTen</td>
+                                    <td>@item.SoCanCuoc</td>
+                                    <td>@item.NgayCap.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@item.LoaiTotNghiep</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-truncate" style="max-width: 130px;">@item.OriginalHash</span>
+                                            <button class="btn btn-sm btn-outline-secondary ms-2 copy-btn" 
+                                                    data-clipboard-text="@item.OriginalHash" 
+                                                    title="Copy to clipboard">
+                                                <i class="bi bi-clipboard"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-truncate" style="max-width: 130px;">@item.CurrentHash</span>
+                                            <button class="btn btn-sm btn-outline-secondary ms-2 copy-btn" 
+                                                    data-clipboard-text="@item.CurrentHash" 
+                                                    title="Copy to clipboard">
+                                                <i class="bi bi-clipboard"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+    
+    <div class="text-center mb-4">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Trở về trang chính
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Khởi tạo clipboard.js cho các nút copy
+            new ClipboardJS('.copy-btn');
+            
+            // Xử lý hiển thị thông báo khi sao chép thành công
+            document.querySelectorAll('.copy-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    // Thay đổi icon sang check khi click
+                    const icon = this.querySelector('i');
+                    const originalClass = icon.className;
+                    icon.className = 'bi bi-check';
+                    
+                    // Sau 1,5 giây, đổi trở lại icon ban đầu
+                    setTimeout(function() {
+                        icon.className = originalClass;
+                    }, 1500);
+                });
+            });
+        });
+    </script>
+} 

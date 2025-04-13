@@ -82,10 +82,35 @@
                     <h5 class="mb-0">Thông tin giao dịch trong block</h5>
                 </div>
                 <div class="card-body">
-                    <div class="alert alert-warning">
-                        <i class="fas fa-exclamation-circle"></i> <strong>Lưu ý:</strong> Phát hiện block đã bị sửa đổi thông qua Merkle root.
-                        Tuy nhiên, hệ thống không thể xác định chính xác giao dịch nào đã bị sửa đổi vì hash ban đầu của từng giao dịch không được lưu trữ riêng biệt.
-                    </div>
+                    @if (Model.CanDetectSpecificTransaction)
+                    {
+                        if (ViewBag.IntegrityWarning != null)
+                        {
+                            <div class="alert alert-warning">
+                                <i class="fas fa-info-circle"></i> <strong>Thông báo:</strong> @ViewBag.IntegrityWarning
+                            </div>
+                        }
+                        else if (ViewBag.HasModifiedTransactions)
+                        {
+                            <div class="alert alert-danger">
+                                <i class="fas fa-exclamation-triangle"></i> <strong>Cảnh báo:</strong> Phát hiện 
+                                <strong>@ViewBag.ModifiedTransactionsCount giao dịch</strong> đã bị sửa đổi trong block này!
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-success">
+                                <i class="fas fa-check-circle"></i> <strong>Thông báo:</strong> Tất cả các giao dịch trong block này đều nguyên vẹn.
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-circle"></i> <strong>Lưu ý:</strong> Phát hiện block đã bị sửa đổi thông qua Merkle root.
+                            Tuy nhiên, hệ thống không thể xác định chính xác giao dịch nào đã bị sửa đổi.
+                        </div>
+                    }
                     
                     <div class="table-responsive mt-3">
                         <table class="table table-striped table-bordered">
@@ -98,17 +123,31 @@
                                     <th>Ngày cấp</th>
                                     <th>Loại tốt nghiệp</th>
                                     <th>Trạng thái</th>
+                                    @if (Model.CanDetectSpecificTransaction)
+                                    {
+                                        <th>Chi tiết</th>
+                                    }
                                 </tr>
                             </thead>
                             <tbody>
                                 @{
                                     var transactions = ViewBag.Transactions as List<ITransaction>;
+                                    var hashDetails = ViewBag.TransactionHashDetails as List<Quanlydiem.Services.TransactionHashDetail>;
+                                    
                                     if (transactions != null)
                                     {
                                         for (int i = 0; i < transactions.Count; i++)
                                         {
                                             var tx = transactions[i];
-                                            <tr>
+                                            var isModified = false;
+                                            var hashDetail = hashDetails?.FirstOrDefault(h => h.TransactionIndex == i);
+                                            
+                                            if (hashDetail != null)
+                                            {
+                                                isModified = hashDetail.IsModified;
+                                            }
+                                            
+                                            <tr class="@(isModified ? "table-danger" : "")">
                                                 <td>@(i + 1)</td>
                                                 <td>@tx.tochuccap</td>
                                                 <td>@tx.hoten</td>
@@ -116,8 +155,92 @@
                                                 <td>@tx.ngaycap.ToString("dd/MM/yyyy HH:mm")</td>
                                                 <td>@tx.loaitotnghiep</td>
                                                 <td>
-                                                    <span class="badge badge-warning">Không xác định</span>
+                                                    @if (Model.CanDetectSpecificTransaction)
+                                                    {
+                                                        if (isModified)
+                                                        {
+                                                            <span class="badge badge-danger">Đã bị sửa đổi</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="badge badge-success">Nguyên vẹn</span>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge badge-warning">Không xác định</span>
+                                                    }
                                                 </td>
+                                                @if (Model.CanDetectSpecificTransaction && hashDetail != null)
+                                                {
+                                                    <td>
+                                                        @if (isModified)
+                                                        {
+                                                            <button type="button" class="btn btn-sm btn-outline-danger" 
+                                                                    data-toggle="modal" data-target="#hashModal@(i)">
+                                                                <i class="fas fa-search"></i> Xem hash
+                                                            </button>
+                                                            
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="hashModal@(i)" tabindex="-1" role="dialog" aria-labelledby="hashModalLabel@(i)" aria-hidden="true">
+                                                                <div class="modal-dialog modal-lg" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header bg-danger text-white">
+                                                                            <h5 class="modal-title" id="hashModalLabel@(i)">Chi tiết giao dịch bị sửa đổi</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div class="form-group">
+                                                                                <label class="font-weight-bold">Thông tin giao dịch:</label>
+                                                                                <p>
+                                                                                    Tổ chức cấp: <strong>@tx.tochuccap</strong><br/>
+                                                                                    Họ tên: <strong>@hashDetail.HoTen</strong><br/>
+                                                                                    Số căn cước: <strong>@hashDetail.SoCanCuoc</strong>
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="font-weight-bold">Hash ban đầu (lưu trong DB):</label>
+                                                                                <div class="input-group">
+                                                                                    <input type="text" class="form-control text-primary" value="@hashDetail.OriginalHash" readonly>
+                                                                                    <div class="input-group-append">
+                                                                                        <button class="btn btn-outline-secondary copy-hash-btn" data-hash="@hashDetail.OriginalHash" type="button">
+                                                                                            <i class="fas fa-copy"></i> Copy
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="font-weight-bold">Hash hiện tại (tính toán lại):</label>
+                                                                                <div class="input-group">
+                                                                                    <input type="text" class="form-control text-danger" value="@hashDetail.CurrentHash" readonly>
+                                                                                    <div class="input-group-append">
+                                                                                        <button class="btn btn-outline-secondary copy-hash-btn" data-hash="@hashDetail.CurrentHash" type="button">
+                                                                                            <i class="fas fa-copy"></i> Copy
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="alert alert-warning">
+                                                                                <i class="fas fa-info-circle"></i> Giao dịch này đã bị sửa đổi sau khi được thêm vào blockchain.
+                                                                                Hash hiện tại (tính toán từ dữ liệu hiện tại) khác với hash ban đầu (đã lưu trong DB lúc tạo giao dịch).
+                                                                                Điều này có thể là dấu hiệu của việc can thiệp trái phép vào dữ liệu.
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="text-muted">-</span>
+                                                        }
+                                                    </td>
+                                                }
                                             </tr>
                                         }
                                     }
@@ -129,4 +252,29 @@
             </div>
         </div>
     </div>
-} 
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Xử lý copy hash
+            $('.copy-hash-btn').click(function() {
+                var hashText = $(this).data('hash');
+                var tempInput = $('<input>');
+                $('body').append(tempInput);
+                tempInput.val(hashText).select();
+                document.execCommand('copy');
+                tempInput.remove();
+                
+                // Đổi biểu tượng trong 1.5 giây
+                var $icon = $(this).find('i');
+                var originalClass = $icon.attr('class');
+                $icon.attr('class', 'fas fa-check');
+                
+                setTimeout(function() {
+                    $icon.attr('class', originalClass);
+                }, 1500);
+            });
+        });
+    </script>
+}

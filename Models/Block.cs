@@ -90,6 +90,9 @@ namespace Quanlydiem.Models
                 if (verbose)
                 {
                     Console.WriteLine($"Block #{BlockNumber}: MerkleRoot không khớp. Dữ liệu giao dịch đã bị sửa đổi.");
+                    
+                    // Kiểm tra từng giao dịch để xác định giao dịch nào đã bị thay đổi
+                    VerifyIndividualTransactions(verbose);
                 }
             }
             
@@ -112,6 +115,35 @@ namespace Quanlydiem.Models
                 return NextBlock.IsValidChain(BlockHash, verbose);
             }
             return isValid;
+        }
+
+        private void VerifyIndividualTransactions(bool verbose)
+        {
+            if (Transactions.Count != OriginalTransactionHashes.Count)
+            {
+                if (verbose)
+                {
+                    Console.WriteLine($"Block #{BlockNumber}: Số lượng giao dịch đã thay đổi. Ban đầu: {OriginalTransactionHashes.Count}, Hiện tại: {Transactions.Count}");
+                }
+                return;
+            }
+
+            for (int i = 0; i < Transactions.Count; i++)
+            {
+                string currentHash = Transactions[i].CalculateTransactionHash();
+                string originalHash = OriginalTransactionHashes[i];
+                
+                if (currentHash != originalHash)
+                {
+                    if (verbose)
+                    {
+                        Console.WriteLine($"Block #{BlockNumber}: Giao dịch #{i} đã bị sửa đổi.");
+                        Console.WriteLine($"  - Thông tin giao dịch: {Transactions[i].hoten}, {Transactions[i].socancuoc}");
+                        Console.WriteLine($"  - Hash ban đầu: {originalHash}");
+                        Console.WriteLine($"  - Hash hiện tại: {currentHash}");
+                    }
+                }
+            }
         }
     }
 }

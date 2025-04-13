@@ -459,6 +459,9 @@ public class BlockchainService
             transaction.ngaycap = ngaycap;
             // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
             transaction.loaitotnghiep = loaitotnghiep;
+            // Không cập nhật TransactionHash để có thể phát hiện sửa đổi sau này
+            // Lưu lại hash gốc của transaction
+            /*
             transaction.TransactionHash = new Transaction
             {
                 // THUỘC TÍNH 1: Có thể thay đổi tochuccap
@@ -472,6 +475,19 @@ public class BlockchainService
                 // THUỘC TÍNH 5: Có thể thay đổi loaitotnghiep
                 loaitotnghiep = loaitotnghiep
             }.CalculateTransactionHash();
+            */
+
+            // Ghi log về sửa đổi nhưng giữ nguyên hash gốc
+            Console.WriteLine($"Transaction {transactionId} đã được sửa đổi trong block {blockNumber}");
+            Console.WriteLine($"Hash gốc được giữ nguyên: {transaction.TransactionHash}");
+            Console.WriteLine($"Hash mới (nếu được tính): {new Transaction
+            {
+                tochuccap = tochuccap,
+                hoten = hoten,
+                socancuoc = socancuoc,
+                ngaycap = ngaycap,
+                loaitotnghiep = loaitotnghiep
+            }.CalculateTransactionHash()}");
 
             // Tính toán lại Merkle Root sau khi sửa đổi
             var updatedTempBlock = new Block(dbBlock.BlockNumber)

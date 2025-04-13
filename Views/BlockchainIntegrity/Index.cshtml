@@ -59,9 +59,9 @@
                     <h5 class="mb-0">Danh sách các Block bị sửa đổi</h5>
                 </div>
                 <div class="card-body">
-                    <div class="alert alert-warning">
-                        <i class="fas fa-info-circle"></i> <strong>Lưu ý:</strong> Hệ thống chỉ có thể phát hiện block bị sửa đổi thông qua Merkle root, 
-                        nhưng không thể xác định chính xác giao dịch nào trong block đã bị sửa đổi.
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> <strong>Lưu ý:</strong> Hệ thống có thể phát hiện block bị sửa đổi thông qua Merkle root
+                        và xác định chính xác giao dịch nào đã bị sửa đổi nhờ lưu trữ hash gốc của từng giao dịch.
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
@@ -92,7 +92,14 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <span class="badge badge-warning">Không xác định cụ thể</span>
+                                            @if (result.CanDetectSpecificTransaction && result.ModifiedTransactions.Count > 0)
+                                            {
+                                                <span class="badge badge-danger">@result.ModifiedTransactions.Count giao dịch bị sửa đổi</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-warning">Không xác định cụ thể</span>
+                                            }
                                         </td>
                                         <td>
                                             <a asp-action="BlockDetails" asp-route-blockNumber="@result.BlockNumber" 
@@ -129,4 +136,4 @@
             }, 30000);
         });
     </script>
-} 
+}

@@ -24,6 +24,9 @@ builder.Services.AddSingleton<BlockChain>(provider => {
 builder.Services.AddDbContext<BlockChainContext>(options =>
     options.UseSqlite("Data Source=blockchain.db"));
 
+// Đăng ký BlockchainIntegrityService
+builder.Services.AddScoped<BlockchainIntegrityService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

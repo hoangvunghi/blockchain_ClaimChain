@@ -4,6 +4,7 @@ using Quanlydiem.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Quanlydiem.Services;
 
 /*
 HƯỚNG DẪN THAY ĐỔI THUỘC TÍNH:
@@ -25,11 +26,16 @@ namespace Quanlydiem.Controllers
     {
         private readonly BlockchainService _blockchainService;
         private readonly BlockChainContext _context;
+        private readonly BlockchainIntegrityService _integrityService;
 
-        public HomeController(BlockchainService blockchainService, BlockChainContext context)
+        public HomeController(BlockchainService blockchainService, BlockChainContext context, BlockchainIntegrityService integrityService)
         {
             _blockchainService = blockchainService;
             _context = context;
+            _integrityService = integrityService;
+            
+            // Log để kiểm tra
+            Console.WriteLine($"HomeController: Khởi tạo với BlockchainIntegrityService, blockchain có {blockchainService.Blockchain?.Blocks?.Count ?? 0} blocks");
         }
 
         public IActionResult Index()
@@ -69,6 +75,36 @@ namespace Quanlydiem.Controllers
         // RSA Encryption Services
         private readonly string PublicKeyFile = "wwwroot/publicKey.xml";
         private readonly string PrivateKeyFile = "wwwroot/privateKey.xml";
+
+        [HttpGet]
+        public IActionResult GetModifiedTransactions()
+        {
+            try
+            {
+                Console.WriteLine("HomeController: Bắt đầu gọi phương thức FindAllModifiedTransactions");
+                var modifiedTransactions = _integrityService.FindAllModifiedTransactions();
+                Console.WriteLine($"HomeController: Đã tìm thấy {modifiedTransactions.Count} transactions bị sửa đổi");
+                
+                // Thêm thông báo nếu có transactions bị sửa đổi
+                if (modifiedTransactions.Count > 0)
+                {
+                    TempData["ErrorMessage"] = $"Phát hiện {modifiedTransactions.Count} transactions đã bị sửa đổi!";
+                }
+                else
+                {
+                    TempData["SuccessMessage"] = "Không phát hiện transaction nào bị sửa đổi. Blockchain vẫn nguyên vẹn!";
+                }
+                
+                return View("ModifiedTransactions", modifiedTransactions);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi kiểm tra transactions: {ex.Message}");
+                Console.WriteLine(ex.StackTrace);
+                TempData["ErrorMessage"] = $"Đã xảy ra lỗi khi kiểm tra: {ex.Message}";
+                return RedirectToAction("Index");
+            }
+        }
 
         [HttpGet]
         public IActionResult GenerateKeys()
